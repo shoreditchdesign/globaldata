@@ -7,8 +7,8 @@ addons.setConfig({
 
     brandTitle: "GlobalData UI",
 
-    colorPrimary: "#6D5DFB",
-    colorSecondary: "#6D5DFB",
+    colorPrimary: "#0034EC",
+    colorSecondary: "#0034EC",
 
     appBg: "#F5F7FB",
     appContentBg: "#FFFFFF",
@@ -20,7 +20,7 @@ addons.setConfig({
     textMutedColor: "#6B7280",
 
     barTextColor: "#6B7280",
-    barSelectedColor: "#6D5DFB",
+    barSelectedColor: "#0034EC",
     barHoverColor: "#111827",
     barBg: "#FFFFFF",
 
@@ -28,5 +28,7 @@ addons.setConfig({
     inputBorder: "#DCE1E8",
     inputTextColor: "#111827",
     inputBorderRadius: 6,
+
+    fontBase: '"Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, sans-serif',
   }),
 });

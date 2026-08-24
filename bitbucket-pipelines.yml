@@ -1,0 +1,59 @@
+image: node:22
+
+definitions:
+  caches:
+    pnpm: /root/.local/share/pnpm/store
+
+  steps:
+    - step: &install
+        name: Install
+        caches:
+          - pnpm
+        script:
+          - corepack enable
+          - corepack prepare pnpm@11.20.0 --activate
+          - pnpm install --frozen-lockfile
+
+    - step: &verify
+        name: Lint, typecheck, test, build
+        caches:
+          - pnpm
+        script:
+          - corepack enable
+          - pnpm lint
+          - pnpm typecheck
+          - pnpm test
+          - pnpm build
+
+    - step: &deploy-preview
+        name: Deploy preview to Vercel
+        caches:
+          - pnpm
+        script:
+          - corepack enable
+          - pnpm dlx vercel pull --yes --environment=preview --token=$VERCEL_TOKEN
+          - pnpm dlx vercel build --token=$VERCEL_TOKEN
+          - pnpm dlx vercel deploy --prebuilt --token=$VERCEL_TOKEN
+
+    - step: &deploy-production
+        name: Deploy production to Vercel
+        caches:
+          - pnpm
+        script:
+          - corepack enable
+          - pnpm dlx vercel pull --yes --environment=production --token=$VERCEL_TOKEN
+          - pnpm dlx vercel build --prod --token=$VERCEL_TOKEN
+          - pnpm dlx vercel deploy --prebuilt --prod --token=$VERCEL_TOKEN
+
+pipelines:
+  pull-requests:
+    '**':
+      - step: *install
+      - step: *verify
+      - step: *deploy-preview
+
+  branches:
+    main:
+      - step: *install
+      - step: *verify
+      - step: *deploy-production

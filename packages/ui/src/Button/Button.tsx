@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes } from "react";
+import { Button as BaseButton } from "@base-ui/react/button";
 import { cva, type VariantProps } from "class-variance-authority";
 import clsx from "clsx";
 
@@ -32,7 +33,7 @@ export function Button({
   ...props
 }: ButtonProps) {
   return (
-    <button
+    <BaseButton
       type={type}
       className={clsx(buttonVariants({ variant, size }), className)}
       {...props}

@@ -62,6 +62,15 @@ pnpm --filter @globaldata/storybook visual:test
 `pnpm visual:test` publishes the built Storybook to Chromatic and expects
 `CHROMATIC_PROJECT_TOKEN` to be set in the environment.
 
+## Deployment & CI
+
+Current setup:
+- Repo hosted on GitHub (`shoreditchdesign/globaldata`).
+- GitHub Actions (`.github/workflows/ci.yml`) runs lint, typecheck, test and build on every PR and on `main`.
+- Vercel hosts `apps/storybook`, connected directly to this GitHub repo — every push auto-builds and deploys.
+
+This is a Sprint 1 demonstration setup, not GlobalData's final infrastructure. `bitbucket-pipelines.yml` in the repo root shows the equivalent Bitbucket Pipelines config — same `pnpm`/`turbo` commands, different CI wrapper — for the planned Sprint 2 migration to GlobalData's own Bitbucket + hosting. That migration is expected to be low effort: no dependency on GitHub-specific tooling, no tech debt tying the codebase to this setup.
+
 ## Notes
 
 - The workspace uses `pnpm` and `turbo`.

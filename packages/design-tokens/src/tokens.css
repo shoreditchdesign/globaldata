@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
 :root {
-  --font-family-button: "Poppins", ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", sans-serif;
+  --font-family-button: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode",
+    Verdana, Arial, sans-serif;
 
   --button-primary-text: #ffffff;
   --button-primary-background: #0034ec;
@@ -16,6 +14,11 @@
   --button-font-size-small: 13px;
   --button-padding-medium: 13px 26px;
   --button-padding-small: 9px 16px;
+  --button-variant-border-width: 0.555556px;
+  --button-variant-radius: 3px;
+  --button-variant-padding: 12.24px 14.4px;
+  --button-variant-font-size: 14.4px;
+  --button-variant-line-height: 14.4px;
   --button-min-width-medium: 120px;
   --button-min-width-small: 76px;
   --button-disabled-text: #a7b3f5;

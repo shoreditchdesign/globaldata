@@ -33,13 +33,28 @@ Plan for Phase 5: a GitHub Actions job (`pnpm lint && pnpm typecheck && pnpm tes
 
 Blocker on the original repo: it's owned by `midnightagency`, and linking a personal Vercel account to it needs org-level GitHub App approval, not just collaborator access. This repo, under `shoreditchdesign`, avoids that.
 
+## Current state (Sprint 1 demonstration setup)
+
+- **Repo host:** GitHub (`shoreditchdesign/globaldata`).
+- **CI:** `.github/workflows/ci.yml` — lint/typecheck/test/build on every PR and on `main`.
+- **Deploy:** Vercel, connected directly to this GitHub repo (native git integration), auto-deploys `apps/storybook` on every push. Output Directory set to `storybook-static` in Vercel project settings.
+
+This is deliberately a Shoreditch-owned demonstration environment — it proves the Storybook setup, CI gate, and deploy pipeline all work end-to-end. It is not GlobalData's final infrastructure.
+
+## Planned Sprint 2 migration — Bitbucket + GlobalData infra
+
+`bitbucket-pipelines.yml` (repo root) is a working, ready-to-use equivalent of `ci.yml` for Bitbucket Pipelines: same `pnpm`/`turbo` commands (`pnpm lint && pnpm typecheck && pnpm test && pnpm build`), CLI-token deploy to Vercel (`VERCEL_TOKEN`/`VERCEL_ORG_ID`/`VERCEL_PROJECT_ID`) instead of Vercel's GitHub App integration.
+
+This exists to demonstrate the migration is low effort, not to imply it's already done:
+- Nothing in the codebase is GitHub-specific — no tech debt tying the project to this host.
+- Migration is a repo mirror (GitHub → Bitbucket) + one new CI-wrapper yml file + reconnecting the deploy target (Vercel token method, or GlobalData's own hosting if that's the actual target) — commands and build config carry over unchanged.
+
 ## Next steps in this repo
 
-1. `pnpm install`, then `pnpm lint && pnpm typecheck && pnpm test && pnpm build` to confirm the copy is intact and green.
-2. Create a Vercel project (personal account) linked to this repo, or use the CLI-token method (`vercel deploy` from within a GitHub Action, driven by a `VERCEL_TOKEN` repo secret) to avoid needing Vercel's GitHub App installed at all.
-3. Add `.github/workflows/ci.yml`: lint/typecheck/test/build on every PR.
-4. Add the Vercel preview deploy step to the same or a separate workflow, gated on `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` secrets.
-5. Once GlobalData's actual deployment target is known (their infra, or Bitbucket), port the workflow logic over — the `pnpm`/`turbo` scripts don't change, only the CI platform wrapper and deploy target.
+1. ~~`pnpm install`, then `pnpm lint && pnpm typecheck && pnpm test && pnpm build` to confirm the copy is intact and green.~~ Done — CI now runs this on every PR.
+2. ~~Create a Vercel project linked to this repo.~~ Done — connected via GitHub, auto-deploying.
+3. ~~Add `.github/workflows/ci.yml`.~~ Done.
+4. Once GlobalData's actual deployment target is known (their infra, or Bitbucket), port `bitbucket-pipelines.yml` (or the real equivalent) over for real — this file is currently a demonstration artifact, not wired to a live Bitbucket repo.
 
 ## Repo structure reference
 
