@@ -1,0 +1,3 @@
+{
+  "extends": "@globaldata/config/stylelint.config.js"
+}

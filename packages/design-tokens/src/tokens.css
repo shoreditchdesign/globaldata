@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --font-family-button: "Poppins", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+
+  --button-primary-text: #ffffff;
+  --button-primary-background: #0034ec;
+  --button-primary-shadow: none;
+  --button-primary-shadow-hover: none;
+  --button-secondary-text: #0034ec;
+  --button-secondary-bg: #ffffff;
+  --button-secondary-border: #0034ec;
+
+  --button-font-size-medium: 15px;
+  --button-font-size-small: 13px;
+  --button-padding-medium: 13px 26px;
+  --button-padding-small: 9px 16px;
+  --button-min-width-medium: 120px;
+  --button-min-width-small: 76px;
+  --button-disabled-text: #a7b3f5;
+  --button-disabled-background: #e9ecfd;
+  --button-disabled-border: #e9ecfd;
+
+  --border-width-default: 1px;
+  --border-color-default: #0034ec;
+
+  --radius-small: 8px;
+
+  --space-2: 12px;
+  --space-3: 28px;
+
+  --focus-ring-color: rgb(0 52 236 / 0.24);
+  --focus-ring-width: 3px;
+  --focus-ring-offset: 3px;
+
+  --switch-width: 44px;
+  --switch-height: 24px;
+  --switch-track-padding: 2px;
+  --switch-track-background-off: #ccd6fa;
+  --switch-track-background-on: var(--button-primary-background);
+  --switch-radius: 999px;
+  --switch-thumb-size: 18px;
+  --switch-thumb-background: #ffffff;
+  --switch-thumb-shadow: 0 1px 3px rgb(15 10 40 / 0.24);
+  --switch-thumb-translate-checked: translateX(20px);
+  --switch-disabled-opacity: 0.5;
+}

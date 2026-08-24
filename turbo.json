@@ -1,0 +1,30 @@
+{
+  "$schema": "https://turborepo.com/schema.json",
+  "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "storybook-static/**", ".next/**"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "test": {
+      "dependsOn": ["^test"]
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"]
+    },
+    "visual:test": {
+      "dependsOn": ["build"],
+      "passThroughEnv": ["CHROMATIC_PROJECT_TOKEN"]
+    },
+    "visual:test:playwright": {
+      "dependsOn": ["build"],
+      "outputs": ["playwright-report/**"]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "ignoreDeprecations": "6.0",
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "storybook/test": ["./node_modules/storybook/dist/test/index.d.ts"]
+    }
+  },
+  "include": [
+    ".storybook/**/*.ts",
+    "../../packages/ui/src/**/*.stories.ts",
+    "../../packages/ui/src/**/*.stories.tsx"
+  ]
+}

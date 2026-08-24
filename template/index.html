@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Deck Template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --coral:#FD6653;
+    --ink:#0E1013;
+    --paper:#FFFFFF;
+    --off:#FAFAFA;
+    --rule-dark:rgba(14,16,19,.28);
+    --rule-light:rgba(250,250,250,.28);
+    --muted-dark:rgba(14,16,19,.62);
+    --muted-light:rgba(250,250,250,.62);
+    --display:'Cabinet Grotesk','Inter',sans-serif;
+    --body:'Inter',sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+
+  body{
+    background:#8A8A8A;
+    font-family:var(--body);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+  }
+
+  .slide{
+    width:1440px;
+    height:800px;
+    position:relative;
+    overflow:hidden;
+    padding:64px 80px;
+    display:none;
+    flex-direction:column;
+    flex:none;
+  }
+  .slide.active{display:flex}
+
+  .slide--light{background:var(--paper);color:var(--ink)}
+  .slide--dark{background:var(--ink);color:var(--off)}
+  .slide--coral{background:var(--coral);color:var(--ink)}
+
+  /* ---------- logo ---------- */
+  .logo{
+    position:absolute;
+    top:40px;
+    right:80px;
+    width:101px;
+    height:33px;
+    color:inherit;
+  }
+  .logo svg{width:100%;height:100%;display:block}
+  .logo svg path{fill:currentColor;stroke:currentColor}
+
+  /* ---------- type ---------- */
+  h1{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:88px;
+    line-height:1.0;
+    letter-spacing:-.02em;
+  }
+
+  h2{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:52px;
+    line-height:1.05;
+    letter-spacing:-.015em;
+  }
+
+  .rule{
+    height:1px;
+    background:var(--rule-dark);
+    margin-top:24px;
+  }
+  .slide--dark .rule{background:var(--rule-light)}
+
+  .deck-sub{
+    font-family:var(--body);
+    font-size:18px;
+    font-weight:400;
+    line-height:1.5;
+    color:var(--muted-light);
+    max-width:640px;
+    margin-top:28px;
+  }
+
+  .lede{
+    font-family:var(--body);
+    font-size:19px;
+    line-height:1.55;
+    max-width:900px;
+    margin-top:32px;
+    color:var(--muted-dark);
+  }
+  .slide--dark .lede{color:var(--muted-light)}
+
+  .body-title{
+    font-family:var(--body);
+    font-weight:700;
+    font-size:17px;
+    line-height:1.35;
+    letter-spacing:-.005em;
+  }
+
+  .body-text{
+    font-family:var(--body);
+    font-weight:400;
+    font-size:16px;
+    line-height:1.6;
+    color:var(--muted-dark);
+  }
+  .slide--dark .body-text{color:var(--muted-light)}
+
+  .eyebrow{
+    font-family:var(--body);
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--muted-dark);
+  }
+  .slide--dark .eyebrow{color:var(--muted-light)}
+
+  .content{margin-top:56px;flex:1}
+
+  /* ---------- stacked list ---------- */
+  .stack{display:flex;flex-direction:column;gap:26px;max-width:1100px}
+  .stack .item{display:grid;grid-template-columns:34px 1fr;gap:20px;align-items:start}
+  .stack .num{
+    font-family:var(--body);
+    font-weight:700;
+    font-size:13px;
+    letter-spacing:.06em;
+    color:var(--coral);
+    padding-top:3px;
+  }
+  .slide--dark .stack .num{color:var(--coral)}
+  .stack .body-text{margin-top:5px;max-width:940px}
+
+  /* ---------- two column compare ---------- */
+  .compare{display:grid;grid-template-columns:1fr 1fr;gap:64px;height:100%}
+  .col{display:flex;flex-direction:column}
+  .col-head{
+    font-family:var(--display);
+    font-weight:500;
+    font-size:30px;
+    letter-spacing:-.01em;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--rule-dark);
+  }
+  .slide--dark .col-head{border-bottom-color:var(--rule-light)}
+
+  .group{margin-top:26px}
+  .group .eyebrow{margin-bottom:14px;display:block}
+
+  ul.marks{list-style:none;display:flex;flex-direction:column;gap:12px}
+  ul.marks li{
+    display:grid;
+    grid-template-columns:22px 1fr;
+    gap:10px;
+    font-size:15.5px;
+    line-height:1.5;
+    color:var(--muted-dark);
+  }
+  .slide--dark ul.marks li{color:var(--muted-light)}
+  ul.marks li .m{font-weight:700;color:var(--ink)}
+  .slide--dark ul.marks li .m{color:var(--off)}
+  ul.marks.neg li .m{color:var(--coral)}
+
+  /* ---------- targets grid ---------- */
+  .targets{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 40px;max-width:1180px}
+  .target{
+    border-top:1px solid var(--rule-dark);
+    padding-top:16px;
+  }
+  .slide--dark .target{border-top-color:var(--rule-light)}
+  .target .body-title{margin-bottom:7px}
+  .target .body-text{font-size:14.5px;line-height:1.5}
+
+  .measures{
+    margin-top:44px;
+    padding-top:26px;
+    border-top:1px solid var(--rule-dark);
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:32px;
+    max-width:1180px;
+  }
+  .slide--dark .measures{border-top-color:var(--rule-light)}
+  .measures .body-title{font-size:15px;margin-bottom:6px}
+  .measures .body-text{font-size:14px;line-height:1.45}
+
+  .pending{
+    display:inline-block;
+    font-family:var(--body);
+    font-weight:700;
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--coral);
+    border:1px solid var(--coral);
+    padding:6px 12px;
+    margin-top:26px;
+  }
+
+  .footnote{
+    font-size:14px;
+    line-height:1.5;
+    color:var(--muted-dark);
+    max-width:900px;
+    margin-top:auto;
+    padding-top:28px;
+  }
+  .slide--dark .footnote{color:var(--muted-light)}
+
+  @media print{
+    body{background:none;display:block}
+    .slide{display:flex !important;page-break-after:always}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ 1. COVER — dark, h1 + deck-sub ============ -->
+<section class="slide slide--dark">
+  <div class="logo" data-logo></div>
+  <div style="margin-top:auto">
+    <h1>Deck title here</h1>
+    <p class="deck-sub">One or two sentences on what this document is and who it's for.</p>
+    <p class="deck-sub" style="margin-top:40px;font-size:14px">Month Year</p>
+  </div>
+</section>
+
+<!-- ============ 2. STACK — numbered list, use for sequential points ============ -->
+<section class="slide slide--light">
+  <div class="logo" data-logo></div>
+  <h2>Section heading</h2>
+  <div class="rule"></div>
+  <p class="lede">Optional one-line framing sentence for the slide. Omit if the heading is self-explanatory.</p>
+  <div class="content" style="margin-top:36px">
+    <div class="stack">
+      <div class="item">
+        <div class="num">01</div>
+        <div>
+          <div class="body-title">Point title, one line</div>
+          <div class="body-text">Supporting sentence or two. Declarative register, no filler, no passive constructions.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">02</div>
+        <div>
+          <div class="body-title">Point title, one line</div>
+          <div class="body-text">Supporting sentence or two.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">03</div>
+        <div>
+          <div class="body-title">Point title, one line</div>
+          <div class="body-text">Supporting sentence or two.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. COMPARE — two column, use for A vs B ============ -->
+<section class="slide slide--light">
+  <div class="logo" data-logo></div>
+  <h2>Comparison heading</h2>
+  <div class="rule"></div>
+  <div class="content">
+    <div class="compare">
+      <div class="col">
+        <div class="col-head">Option A</div>
+        <div class="group">
+          <span class="eyebrow">In favour</span>
+          <ul class="marks">
+            <li><span class="m">+</span><span>Point in favour.</span></li>
+            <li><span class="m">+</span><span>Point in favour.</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <span class="eyebrow">Against</span>
+          <ul class="marks neg">
+            <li><span class="m">—</span><span>Point against.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col">
+        <div class="col-head">Option B</div>
+        <div class="group">
+          <span class="eyebrow">In favour</span>
+          <ul class="marks">
+            <li><span class="m">+</span><span>Point in favour.</span></li>
+          </ul>
+        </div>
+        <div class="group">
+          <span class="eyebrow">Against</span>
+          <ul class="marks neg">
+            <li><span class="m">—</span><span>Point against.</span></li>
+            <li><span class="m">—</span><span>Point against.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="footnote">Optional bottom-anchored qualifier that applies to the whole slide.</p>
+</section>
+
+<!-- ============ 4. TARGETS + MEASURES — grid, use for evidence/benchmarking rows ============ -->
+<section class="slide slide--light">
+  <div class="logo" data-logo></div>
+  <h2>Evidence heading</h2>
+  <div class="rule"></div>
+  <p class="lede">One line on how the set was selected and why it's a fair comparison.</p>
+  <div class="content" style="margin-top:36px">
+    <div class="targets">
+      <div class="target">
+        <div class="body-title">Item one</div>
+        <div class="body-text">One or two sentences of finding.</div>
+      </div>
+      <div class="target">
+        <div class="body-title">Item two</div>
+        <div class="body-text">One or two sentences of finding.</div>
+      </div>
+      <div class="target">
+        <div class="body-title">Item three</div>
+        <div class="body-text">One or two sentences of finding.</div>
+      </div>
+    </div>
+    <div class="measures">
+      <div>
+        <div class="body-title">Measure one</div>
+        <div class="body-text">What this column tracks.</div>
+      </div>
+      <div>
+        <div class="body-title">Measure two</div>
+        <div class="body-text">What this column tracks.</div>
+      </div>
+      <div>
+        <div class="body-title">Measure three</div>
+        <div class="body-text">What this column tracks.</div>
+      </div>
+      <div>
+        <div class="body-title">Measure four</div>
+        <div class="body-text">What this column tracks.</div>
+      </div>
+    </div>
+  </div>
+  <!-- while evidence is still outstanding, mark the slide instead of leaving placeholder copy in: -->
+  <!-- <span class="pending">Findings pending</span> -->
+</section>
+
+<!-- ============ 5. CLOSE — dark, stack, use for the recommendation/decision slide ============ -->
+<section class="slide slide--dark">
+  <div class="logo" data-logo></div>
+  <h2>Recommendation heading</h2>
+  <div class="rule"></div>
+  <div class="content">
+    <div class="stack">
+      <div class="item">
+        <div class="num">01</div>
+        <div>
+          <div class="body-title">Point title</div>
+          <div class="body-text">Supporting sentence.</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="num">02</div>
+        <div>
+          <div class="body-title">Point title</div>
+          <div class="body-text">Supporting sentence.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Replace LOGO with the client's mark, inlined as SVG with fill/stroke set to currentColor
+  // so it flips automatically between .slide--light and .slide--dark. See DESIGN-NOTES.md §5.
+  const LOGO = `<svg viewBox="0 0 101 33" fill="none" xmlns="http://www.w3.org/2000/svg"></svg>`;
+  document.querySelectorAll('[data-logo]').forEach(el => { el.innerHTML = LOGO; });
+
+  (function(){
+    const slides = document.querySelectorAll('.slide');
+    const total = slides.length;
+
+    function currentIndex(){
+      const n = parseInt(new URLSearchParams(location.search).get('slide'), 10);
+      if(!n || n < 1) return 1;
+      if(n > total) return total;
+      return n;
+    }
+
+    function render(n){
+      slides.forEach((s, i) => s.classList.toggle('active', i === n - 1));
+    }
+
+    function goTo(n){
+      n = Math.min(Math.max(n, 1), total);
+      const url = new URL(location);
+      url.searchParams.set('slide', n);
+      history.replaceState(null, '', url);
+      render(n);
+    }
+
+    render(currentIndex());
+
+    document.addEventListener('keydown', e => {
+      if(e.key === 'ArrowRight' || e.key === 'ArrowDown') goTo(currentIndex() + 1);
+      else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp') goTo(currentIndex() - 1);
+    });
+
+    window.addEventListener('popstate', () => render(currentIndex()));
+  })();
+</script>
+
+</body>
+</html>
