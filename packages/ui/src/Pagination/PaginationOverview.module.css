@@ -1,0 +1,51 @@
+.canvas {
+  min-height: 100%;
+  padding: 32px;
+
+  color: #111827;
+  background: #f7f9fd;
+
+  font-family: var(--font-family-manrope);
+}
+
+.page {
+  width: min(720px, 100%);
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 8px;
+
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.lead {
+  margin: 0 0 28px;
+
+  color: #515255;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+}
+
+.item {
+  max-width: 100%;
+  margin: 0;
+}
+
+.caption {
+  margin: 0 0 12px;
+
+  color: #686868;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

@@ -111,4 +111,19 @@
   --tabs-hover-indicator-color: #cacaca;
   --tabs-indicator-height: 4px;
   --tabs-disabled-opacity: 0.5;
+
+  --pagination-dot-size: 12px;
+  --pagination-dot-radius: 6px;
+  --pagination-dot-color: #cfd1d4;
+  --pagination-dot-active-color: #08216a;
+  --pagination-dot-gap: 4px;
+  --pagination-button-size: 28px;
+  --pagination-button-background: #ffffff;
+  --pagination-button-border-width: 0.56px;
+  --pagination-button-border-color: #e2e2e2;
+  --pagination-button-radius: 14px;
+  --pagination-button-gap: 12px;
+  --pagination-icon-size: 10px;
+  --pagination-icon-color: #000000;
+  --pagination-disabled-opacity: 0.5;
 }

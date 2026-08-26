@@ -23,3 +23,16 @@ export type {
   TabsProps,
   TabsTabProps,
 } from "./Tabs/Tabs";
+
+export {
+  Pagination,
+  PaginationIndicators,
+  PaginationNext,
+  PaginationPrevious,
+} from "./Pagination/Pagination";
+export type {
+  PaginationIndicatorsProps,
+  PaginationNextProps,
+  PaginationPreviousProps,
+  PaginationProps,
+} from "./Pagination/Pagination";

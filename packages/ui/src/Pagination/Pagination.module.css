@@ -1,0 +1,89 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+}
+
+.indicators {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--pagination-dot-gap);
+  margin-inline-end: var(--pagination-button-gap);
+}
+
+.dot {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: var(--pagination-dot-size);
+  height: var(--pagination-dot-size);
+  margin-block: 0;
+  padding-block: 0;
+  padding-inline: 0;
+
+  border: none;
+  border-radius: var(--pagination-dot-radius);
+  background: var(--pagination-dot-color);
+  cursor: pointer;
+
+  transition: background-color 180ms ease;
+}
+
+.dot[data-active] {
+  background: var(--pagination-dot-active-color);
+}
+
+.dot:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+@media (hover: hover) {
+  .dot:hover {
+    background: var(--pagination-dot-active-color);
+  }
+}
+
+.button {
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--pagination-button-size);
+  height: var(--pagination-button-size);
+  margin-block: 0;
+  padding-block: 0;
+  padding-inline: 0;
+
+  border: var(--pagination-button-border-width) solid
+    var(--pagination-button-border-color);
+  border-radius: var(--pagination-button-radius);
+  background: var(--pagination-button-background);
+  color: var(--pagination-icon-color);
+  cursor: pointer;
+}
+
+.next {
+  margin-inline-start: var(--pagination-button-gap);
+}
+
+.button:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: var(--pagination-disabled-opacity);
+}
+
+.icon {
+  display: block;
+  flex-shrink: 0;
+  width: var(--pagination-icon-size);
+  height: var(--pagination-icon-size);
+}
+
+.iconPrevious {
+  transform: scaleX(-1);
+}
