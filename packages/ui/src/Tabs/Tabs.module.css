@@ -1,0 +1,95 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.list {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: var(--tabs-gap);
+  overflow-x: auto;
+
+  scrollbar-width: thin;
+}
+
+.tab {
+  position: relative;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  margin-block: 0;
+  margin-inline: 0;
+  padding: var(--tabs-tab-padding);
+
+  border: none;
+  background: transparent;
+
+  color: var(--tabs-tab-color);
+  font-family: var(--tabs-font-family);
+  font-size: var(--tabs-font-size);
+  font-weight: 500;
+  line-height: var(--tabs-line-height);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tab::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: var(--tabs-indicator-height);
+
+  background: var(--tabs-hover-indicator-color);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 180ms ease;
+}
+
+.tab:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.tab[data-disabled] {
+  cursor: not-allowed;
+  opacity: var(--tabs-disabled-opacity);
+}
+
+@media (hover: hover) {
+  .tab:hover:not([data-disabled]):not([data-active])::after {
+    opacity: 1;
+  }
+}
+
+.indicator {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  width: var(--active-tab-width);
+  height: var(--tabs-indicator-height);
+
+  background: var(--tabs-indicator-color);
+  translate: var(--active-tab-left) 0;
+  pointer-events: none;
+
+  transition:
+    translate 180ms ease,
+    width 180ms ease;
+}
+
+.panel {
+  margin-block-start: var(--space-2);
+
+  color: var(--tabs-tab-color);
+  font-family: var(--tabs-font-family);
+  font-size: var(--tabs-font-size);
+  font-weight: 400;
+  line-height: var(--tabs-line-height);
+}

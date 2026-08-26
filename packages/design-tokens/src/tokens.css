@@ -5,6 +5,8 @@
   --font-family-manrope: "Manrope", sans-serif;
   --font-family-helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif;
 
+  --color-brand: #0034ec;
+
   --button-primary-text: #ffffff;
   --button-primary-background: #0034ec;
   --button-primary-shadow: none;
@@ -98,4 +100,15 @@
   --text-input-disabled-opacity: 0.5;
   --text-input-suffix-size: 32px;
   --text-input-suffix-icon-size: 20px;
+
+  --tabs-font-family: var(--font-family-manrope);
+  --tabs-font-size: 12px;
+  --tabs-line-height: 12px;
+  --tabs-tab-color: #050a16;
+  --tabs-tab-padding: 20px 0;
+  --tabs-gap: 32px;
+  --tabs-indicator-color: #08216a;
+  --tabs-hover-indicator-color: #cacaca;
+  --tabs-indicator-height: 4px;
+  --tabs-disabled-opacity: 0.5;
 }

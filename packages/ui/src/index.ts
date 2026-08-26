@@ -15,3 +15,11 @@ export type {
 
 export { TextInput } from "./TextInput/TextInput";
 export type { TextInputProps } from "./TextInput/TextInput";
+
+export { Tabs, TabsList, TabsPanel, TabsTab } from "./Tabs/Tabs";
+export type {
+  TabsListProps,
+  TabsPanelProps,
+  TabsProps,
+  TabsTabProps,
+} from "./Tabs/Tabs";
