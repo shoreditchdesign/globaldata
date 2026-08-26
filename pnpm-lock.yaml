@@ -30,6 +30,12 @@ importers:
       '@chromatic-com/storybook':
         specifier: ^5.3.0
         version: 5.3.0(storybook@10.5.6(@types/react@19.2.18)(react@19.2.8))
+      '@fontsource/manrope':
+        specifier: ^5.3.0
+        version: 5.3.0
+      '@fontsource/poppins':
+        specifier: ^5.3.0
+        version: 5.3.0
       '@playwright/test':
         specifier: ^1.62.1
         version: 1.62.1
@@ -128,6 +134,9 @@ importers:
       react-dom:
         specifier: ^19.2.8
         version: 19.2.8(react@19.2.8)
+      storybook:
+        specifier: 10.5.6
+        version: 10.5.6(@types/react@19.2.18)(react@19.2.8)
       stylelint:
         specifier: ^17.14.1
         version: 17.14.1(supports-color@10.2.2)(typescript@6.0.3)
@@ -495,6 +504,12 @@ packages:
 
   '@floating-ui/utils@0.2.12':
     resolution: {integrity: sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww==}
+
+  '@fontsource/manrope@5.3.0':
+    resolution: {integrity: sha512-obJ1Dv3+uCA6HlHgW8u4BGYxJR9In2HW7gjJhlflEvkrj1X1iSEwu0fToL+JYGC/FEKFfIz1sBuPduvcL2gIAA==}
+
+  '@fontsource/poppins@5.3.0':
+    resolution: {integrity: sha512-cms1nM7U6SN8epIV1WMVOV8VsA645aSm3wHfzIQnkk188U341ThbJGSl2Sv54V29gnDbT2arMPfLzvVIIVCceQ==}
 
   '@joshwooding/vite-plugin-react-docgen-typescript@0.7.0':
     resolution: {integrity: sha512-qvsTEwEFefhdirGOPnu9Wp6ChfIwy2dBCRuETU3uE+4cC+PFoxMSiiEhxk4lOluA34eARHA0OxqsEUYDqRMgeQ==}
@@ -2911,6 +2926,10 @@ snapshots:
       react-dom: 19.2.8(react@19.2.8)
 
   '@floating-ui/utils@0.2.12': {}
+
+  '@fontsource/manrope@5.3.0': {}
+
+  '@fontsource/poppins@5.3.0': {}
 
   '@joshwooding/vite-plugin-react-docgen-typescript@0.7.0(typescript@6.0.3)(vite@8.2.0(@types/node@24.13.3)(esbuild@0.28.1))':
     dependencies:

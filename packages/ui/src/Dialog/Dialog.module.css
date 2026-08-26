@@ -1,0 +1,143 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--dialog-z-index);
+
+  background: var(--dialog-overlay-background);
+}
+
+.viewport {
+  position: fixed;
+  inset: 0;
+  z-index: var(--dialog-z-index);
+
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--space-3);
+  overflow: hidden;
+}
+
+.popup {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  flex: 0 0 auto;
+  width: var(--dialog-width);
+  max-width: var(--dialog-width);
+  max-height: 100%;
+  min-block-size: 0;
+  padding: var(--dialog-padding);
+
+  overflow: hidden;
+
+  background: var(--dialog-background);
+  border: var(--dialog-border-width) solid var(--dialog-border-color);
+  border-radius: var(--dialog-radius);
+  box-shadow: var(--dialog-shadow);
+
+  font-family: var(--dialog-description-font-family);
+  color: var(--dialog-title-color);
+}
+
+.close {
+  position: absolute;
+  top: var(--dialog-close-offset-top);
+  right: var(--dialog-close-offset-right);
+  z-index: 1;
+  box-sizing: border-box;
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--dialog-close-size);
+  height: var(--dialog-close-size);
+  padding-block: 0;
+  padding-inline: 0;
+
+  border: none;
+  border-radius: var(--radius-small);
+
+  color: var(--dialog-close-color);
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.close:hover:not(:focus-visible) {
+  opacity: 0.7;
+}
+
+.close:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.closeIcon {
+  display: block;
+  width: var(--dialog-close-icon-size);
+  height: var(--dialog-close-icon-size);
+}
+
+.header {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+
+  margin-bottom: var(--dialog-header-gap);
+
+  text-align: center;
+}
+
+.title {
+  margin-block: 0;
+  margin-inline: 0;
+
+  font-family: var(--dialog-title-font-family);
+  font-size: var(--dialog-title-font-size);
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: var(--dialog-title-line-height);
+  color: var(--dialog-title-color);
+  text-align: center;
+}
+
+.description {
+  margin-block: 0;
+  margin-inline: 0;
+
+  font-family: var(--dialog-description-font-family);
+  font-size: var(--dialog-description-font-size);
+  font-weight: 400;
+  line-height: var(--dialog-description-line-height);
+  color: var(--dialog-description-color);
+  text-align: center;
+}
+
+.body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-block-size: 0;
+  gap: var(--dialog-body-gap);
+
+  overflow: auto;
+}
+
+.footer {
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--dialog-footer-gap);
+
+  margin-top: var(--dialog-body-gap);
+}
