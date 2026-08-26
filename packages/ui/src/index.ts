@@ -12,3 +12,6 @@ export type {
   DialogProps,
   DialogTriggerProps,
 } from "./Dialog/Dialog";
+
+export { TextInput } from "./TextInput/TextInput";
+export type { TextInputProps } from "./TextInput/TextInput";

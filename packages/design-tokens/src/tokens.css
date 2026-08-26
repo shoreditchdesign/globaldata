@@ -77,4 +77,25 @@
   --dialog-header-gap: 15px;
   --dialog-body-gap: 28px;
   --dialog-footer-gap: 10px;
+
+  --text-input-font-family: var(--font-family-poppins);
+  --text-input-font-size: 16px;
+  --text-input-line-height: 24px;
+  --text-input-padding: 4px 5px;
+  --text-input-height: 33px;
+  --text-input-leading-width: 120px;
+  --text-input-radius: 4px;
+  --text-input-prefix-gap: 8px;
+  --text-input-message-gap: 8px;
+  --text-input-width: 100%;
+  --text-input-label-color: #0a0a0a;
+  --text-input-label-background: #f4f5f7;
+  --text-input-background: #e8f0fe;
+  --text-input-text-color: #0a0a0a;
+  --text-input-placeholder-color: #8a8a8a;
+  --text-input-hint-color: #686868;
+  --text-input-error-color: #b42318;
+  --text-input-disabled-opacity: 0.5;
+  --text-input-suffix-size: 32px;
+  --text-input-suffix-icon-size: 20px;
 }

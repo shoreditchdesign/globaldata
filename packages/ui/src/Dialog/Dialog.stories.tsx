@@ -7,7 +7,7 @@ import { Dialog, DialogPopup, DialogTrigger } from "./Dialog";
 import { DialogProfileContent, DialogProfileFooter } from "./DialogOverview";
 
 const meta = {
-  title: "Components/Dialog",
+  title: "Components/Modal Dialog",
   component: Dialog,
 } satisfies Meta<typeof Dialog>;
 
