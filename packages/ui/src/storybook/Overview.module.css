@@ -34,6 +34,12 @@
   padding: 0;
 }
 
+.heroFullPreview {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 28px;
+}
+
 .heroBadge {
   display: grid;
   place-items: center;
@@ -264,6 +270,35 @@
   width: 100%;
 }
 
+.previewBodyFlush {
+  min-height: 0;
+}
+
+.previewBodyFlush.previewBodyCode {
+  min-height: 280px;
+}
+
+.previewFrameFlush {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.previewFrameFlush.previewFrameActive {
+  position: relative;
+  inset: auto;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-height: 0;
+}
+
+.previewFrameInnerFlush {
+  min-height: 0;
+  padding: 0;
+  gap: 0;
+  justify-content: flex-start;
+}
+
 .codeBlock {
   position: absolute;
   inset: 0;
@@ -492,6 +527,11 @@
     min-height: 240px;
   }
 
+  .previewFrameFlush,
+  .previewFrameInnerFlush {
+    min-height: 0;
+  }
+
   .codePre {
     white-space: pre-wrap;
     overflow-wrap: anywhere;
@@ -518,6 +558,10 @@
 
   .previewFrameInner {
     padding: 16px;
+  }
+
+  .previewFrameInnerFlush {
+    padding: 0;
   }
 
   .statesGrid {

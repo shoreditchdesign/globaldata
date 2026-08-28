@@ -39,10 +39,7 @@ async function waitForDialogFocus(dialog: HTMLElement) {
   });
 }
 
-async function waitForDialogClosed(
-  dialog: HTMLElement,
-  trigger: HTMLElement,
-) {
+async function waitForDialogClosed(dialog: HTMLElement, trigger: HTMLElement) {
   await waitFor(() => {
     expect(dialog).not.toBeVisible();
     expect(trigger).toHaveFocus();
@@ -593,8 +590,12 @@ export const ProfileAndFocusInteractions: Story = {
     expect(getComputedStyle(mobileControl).outlineStyle).toBe("none");
     expect(getComputedStyle(phoneGroup).outlineStyle).toBe("none");
     await waitFor(() => {
-      expect(getComputedStyle(phoneGroup).borderTopColor).toBe("rgb(5, 10, 22)");
-      expect(getComputedStyle(mobile).backgroundColor).toBe("rgb(255, 255, 255)");
+      expect(getComputedStyle(phoneGroup).borderTopColor).toBe(
+        "rgb(5, 10, 22)",
+      );
+      expect(getComputedStyle(mobile).backgroundColor).toBe(
+        "rgb(255, 255, 255)",
+      );
     });
 
     const countryCode = page.getByRole("combobox", { name: "Country Code" });
@@ -646,7 +647,9 @@ export const ProfileAndFocusInteractions: Story = {
     });
     const countrySearchBox = countrySearch.getBoundingClientRect();
 
-    expect(Math.abs(country.getBoundingClientRect().width - countryClosedWidth)).toBeLessThan(1);
+    expect(
+      Math.abs(country.getBoundingClientRect().width - countryClosedWidth),
+    ).toBeLessThan(1);
     expect(Math.abs(countryPanelBox.left - countryBox.left)).toBeLessThan(2);
     expect(Math.abs(countryPanelBox.right - countryBox.right)).toBeLessThan(2);
     expect(Math.abs(countryPanelBox.width - countryBox.width)).toBeLessThan(2);
@@ -696,7 +699,9 @@ export const ProfileAndFocusInteractions: Story = {
 
     await userEvent.clear(mobile);
     await userEvent.type(mobile, "abc");
-    await userEvent.click(page.getByRole("button", { name: "Save Preferences" }));
+    await userEvent.click(
+      page.getByRole("button", { name: "Save Preferences" }),
+    );
     await waitFor(() => {
       expect(page.getByText("Enter a valid mobile number")).toBeVisible();
     });

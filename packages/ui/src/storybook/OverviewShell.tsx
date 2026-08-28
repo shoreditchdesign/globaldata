@@ -10,6 +10,8 @@ type OverviewShellProps = {
   preview: ReactNode;
   previewActions?: ReactNode;
   previewClassName?: string;
+  previewFlush?: boolean;
+  previewFullWidth?: boolean;
   previewWide?: boolean;
   title: string;
 };
@@ -22,6 +24,8 @@ export function OverviewShell({
   preview,
   previewActions,
   previewClassName,
+  previewFlush = false,
+  previewFullWidth = false,
   previewWide = false,
   title,
 }: OverviewShellProps) {
@@ -41,7 +45,11 @@ export function OverviewShell({
   return (
     <div className={styles.canvas}>
       <div className={styles.page}>
-        <section className={styles.hero}>
+        <section
+          className={`${styles.hero} ${
+            previewFullWidth ? styles.heroFullPreview : ""
+          }`.trim()}
+        >
           <div className={styles.heroCopy}>
             <div className={styles.heroBadge}>{badge}</div>
             <p className={styles.eyebrow}>Component</p>
@@ -96,19 +104,21 @@ export function OverviewShell({
             <div
               className={`${styles.previewBody} ${
                 view === "code" ? styles.previewBodyCode : ""
-              }`}
+              } ${previewFlush ? styles.previewBodyFlush : ""}`.trim()}
             >
               <div
                 aria-hidden={view !== "preview"}
                 inert={view !== "preview"}
                 className={`${styles.previewFrame} ${
                   view === "preview" ? styles.previewFrameActive : ""
-                } ${previewClassName ?? ""}`.trim()}
+                } ${previewFlush ? styles.previewFrameFlush : ""} ${
+                  previewClassName ?? ""
+                }`.trim()}
               >
                 <div
                   className={`${styles.previewFrameInner} ${
                     previewWide ? styles.previewFrameInnerWide : ""
-                  }`}
+                  } ${previewFlush ? styles.previewFrameInnerFlush : ""}`.trim()}
                 >
                   {view === "preview" ? preview : null}
                 </div>

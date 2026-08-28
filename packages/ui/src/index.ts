@@ -36,3 +36,6 @@ export type {
   PaginationPreviousProps,
   PaginationProps,
 } from "./Pagination/Pagination";
+
+export { Table } from "./Table/Table";
+export type { TableColumnDef, TableProps } from "./Table/Table";

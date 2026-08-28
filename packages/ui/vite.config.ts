@@ -12,7 +12,12 @@ export default defineConfig({
     outDir: "dist",
     sourcemap: true,
     rollupOptions: {
-      external: ["react", "react/jsx-runtime"],
+      external: [
+        "react",
+        "react/jsx-runtime",
+        "ag-grid-community",
+        "ag-grid-react",
+      ],
     },
   },
 });

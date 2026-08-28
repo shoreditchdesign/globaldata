@@ -28,6 +28,7 @@ Reusable components in `@globaldata/ui`:
 - `TextInput`
 - `Tabs` (`TabsList`, `TabsTab`, `TabsPanel`)
 - `Pagination` (`PaginationIndicators`, `PaginationPrevious`, `PaginationNext`)
+- `Table`
 
 Design tokens live in `@globaldata/design-tokens`. Storybook is the main component documentation.
 

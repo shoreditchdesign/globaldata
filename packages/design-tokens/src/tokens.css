@@ -126,4 +126,37 @@
   --pagination-icon-size: 10px;
   --pagination-icon-color: #000000;
   --pagination-disabled-opacity: 0.5;
+
+  --table-font-family: var(--font-family-manrope);
+  --table-font-size: 14px;
+  --table-cell-line-height: 20px;
+  --table-cell-color: #515255;
+  --table-cell-padding-inline: 12px;
+  --table-link-color: #08216a;
+  --table-header-font-family: var(--font-family-manrope);
+  --table-header-font-size: 12px;
+  --table-header-font-weight: 400;
+  --table-header-line-height: 14px;
+  --table-header-color: #ffffff;
+  --table-header-background: #050a16;
+  --table-header-padding-block: 8px;
+  --table-header-padding-inline: 24px;
+  --table-header-height: 30px;
+  --table-row-height: 44px;
+  --table-row-background: #ffffff;
+  --table-row-alt-background: #ffffff;
+  --table-row-hover-background: #f7f8fa;
+  --table-background: #ffffff;
+  --table-separator-color: #dbdbdb;
+  --table-column-separator-width: 2px;
+  --table-row-separator-width: 1px;
+  --table-border-color: #dbdbdb;
+  --table-border-width: 1px;
+  --table-radius: 0;
+  --table-width: 100%;
+  --table-fill: 100%;
+  --table-min-width: 0;
+  --table-min-height: 0;
+  --table-default-height: 420px;
+  --table-empty-color: #515255;
 }

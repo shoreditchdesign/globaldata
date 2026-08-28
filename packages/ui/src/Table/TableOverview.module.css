@@ -1,0 +1,23 @@
+.previewTable,
+.storyFrame {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.storyFrame {
+  padding: 24px;
+}
+
+.longContentTable :global(.ag-body-horizontal-scroll.ag-scrollbar-invisible.ag-apple-scrollbar) {
+  visibility: visible;
+  opacity: 1;
+}
+
+.demoTable {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
