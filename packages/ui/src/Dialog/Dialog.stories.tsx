@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 
 import { Button } from "../Button/Button";
 import { Dialog, DialogPopup, DialogTrigger } from "./Dialog";
+import { DialogDocsOverview } from "./DialogDocsOverview";
 import { DialogProfileContent, DialogProfileFooter } from "./DialogOverview";
 
 const meta = {
@@ -82,6 +83,16 @@ const centerTriggerDecorator: Story["decorators"] = [
     </CenterInCanvas>
   ),
 ];
+
+export const Overview: Story = {
+  parameters: {
+    layout: "fullscreen",
+    chromatic: {
+      viewports: [375, 768, 1200],
+    },
+  },
+  render: () => <DialogDocsOverview />,
+};
 
 export const Default: Story = {
   parameters: {
