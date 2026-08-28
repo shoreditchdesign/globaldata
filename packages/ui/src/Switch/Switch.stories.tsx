@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, fn, userEvent, within } from "storybook/test";
 
 import { Switch } from "./Switch";
+import { SwitchOverview } from "./SwitchOverview";
 
 const meta = {
   title: "Components/Switch",
@@ -11,6 +12,16 @@ const meta = {
 export default meta;
 
 type Story = StoryObj<typeof meta>;
+
+export const Overview: Story = {
+  parameters: {
+    layout: "fullscreen",
+    chromatic: {
+      viewports: [375, 768, 1200],
+    },
+  },
+  render: () => <SwitchOverview />,
+};
 
 export const Default: Story = {
   args: {

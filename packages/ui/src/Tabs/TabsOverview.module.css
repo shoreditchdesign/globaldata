@@ -1,30 +1,9 @@
-.canvas {
-  min-height: 100%;
-  padding: 32px;
-
-  color: #111827;
-  background: #f7f9fd;
-
-  font-family: var(--font-family-manrope);
+.previewBlock {
+  width: 100%;
+  min-width: 0;
 }
 
-.page {
-  width: min(720px, 100%);
-  margin: 0 auto;
-}
-
-.title {
-  margin: 0 0 8px;
-
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 40px;
-}
-
-.lead {
-  margin: 0 0 28px;
-
-  color: #515255;
-  font-size: 16px;
-  line-height: 24px;
+.previewBlock p,
+.previewBlock [role="tabpanel"] {
+  overflow-wrap: anywhere;
 }

@@ -1,0 +1,15 @@
+.labeled {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: min(100%, 280px);
+
+  color: #151d31;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.labeled label {
+  cursor: pointer;
+}

@@ -259,6 +259,11 @@
   padding: 24px;
 }
 
+.previewFrameInnerWide {
+  align-items: stretch;
+  width: 100%;
+}
+
 .codeBlock {
   position: absolute;
   inset: 0;
@@ -389,15 +394,15 @@
   border-radius: 999px;
 }
 
-.showcaseIconBasic {
+.iconToneBrand {
   color: #0034ec;
 }
 
-.showcaseIconFooter {
+.iconToneTeal {
   color: #63d9c5;
 }
 
-.showcaseIconScroll {
+.iconToneBlue {
   color: #5fa6ff;
 }
 
@@ -424,12 +429,35 @@
   min-width: 0;
 }
 
-.demoButtons {
+.demo {
   display: flex;
   gap: 28px;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  min-width: 0;
+}
+
+.statesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+}
+
+.stateItem {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.stateLabel {
+  margin: 0;
+
+  color: #34405a;
+
+  font-size: 12px;
+  font-weight: 600;
 }
 
 @media (max-width: 1080px) {
@@ -490,5 +518,9 @@
 
   .previewFrameInner {
     padding: 16px;
+  }
+
+  .statesGrid {
+    grid-template-columns: 1fr;
   }
 }

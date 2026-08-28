@@ -24,6 +24,9 @@ export const Overview: Story = {
   },
   parameters: {
     layout: "fullscreen",
+    chromatic: {
+      viewports: [375, 768, 1200],
+    },
   },
   render: () => <PaginationOverview />,
 };

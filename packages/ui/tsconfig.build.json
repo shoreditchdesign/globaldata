@@ -9,6 +9,11 @@
     "src/**/*.stories.ts",
     "src/**/*.stories.tsx",
     "src/**/*.test.ts",
-    "src/**/*.test.tsx"
+    "src/**/*.test.tsx",
+    "src/**/*Overview.ts",
+    "src/**/*Overview.tsx",
+    "src/storybook/**",
+    "src/Dialog/profileCountries.ts",
+    "src/TextInput/HoldToShowPasswordField.tsx"
   ]
 }
