@@ -28,8 +28,7 @@ export function TextInputOverview() {
         <h1 className={styles.title}>Text Input</h1>
         <p className={styles.lead}>
           Reusable labeled input for forms. Prefix, helper, and error are
-          optional. Geography Focus is a separate select-like control, shown
-          here only as a visual reference.
+          optional.
         </p>
 
         <div className={styles.grid}>
@@ -81,12 +80,6 @@ export function TextInputOverview() {
               label="Password"
               placeholder="Enter here..."
             />
-          </figure>
-          <figure className={styles.item}>
-            <figcaption className={styles.caption}>
-              Geography Focus (reference, not TextInput)
-            </figcaption>
-            <div className={styles.geographyReference}>Geography Focus</div>
           </figure>
         </div>
       </div>

@@ -179,7 +179,7 @@ function CloseIcon() {
         d="M2 2l12 12M14 2L2 14"
         fill="none"
         stroke="currentColor"
-        strokeWidth="1.5"
+        strokeWidth="2"
         strokeLinecap="round"
       />
     </svg>

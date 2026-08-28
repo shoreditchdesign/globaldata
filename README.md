@@ -21,11 +21,36 @@ packages/
 
 ## Current Scope
 
-The current implementation includes:
-- a CSS-based design token foundation
-- a reusable `Button` component with variants, sizes and states
-- Storybook stories for isolated component examples
-- a richer `Overview` page for component documentation and presentation
+Reusable components in `@globaldata/ui`:
+- `Button`
+- `Switch`
+- `Dialog` (`DialogTrigger`, `DialogPopup`)
+- `TextInput`
+- `Tabs` (`TabsList`, `TabsTab`, `TabsPanel`)
+- `Pagination` (`PaginationIndicators`, `PaginationPrevious`, `PaginationNext`)
+
+Design tokens live in `@globaldata/design-tokens`. Storybook is the main component documentation.
+
+## Usage
+
+Import components from the package entry point, and always load the compiled styles:
+
+```tsx
+import { Button, Dialog, DialogPopup, DialogTrigger } from "@globaldata/ui";
+import "@globaldata/ui/styles.css";
+```
+
+To review components locally, start Storybook from the repository root:
+
+```bash
+pnpm dev
+```
+
+That runs the Storybook app (`@globaldata/storybook`). Equivalent:
+
+```bash
+pnpm --filter @globaldata/storybook dev
+```
 
 ## Scripts
 

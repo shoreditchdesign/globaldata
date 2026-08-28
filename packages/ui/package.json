@@ -23,7 +23,8 @@
     "@base-ui/react": "^1.7.0",
     "@globaldata/design-tokens": "workspace:*",
     "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1"
+    "clsx": "^2.1.1",
+    "countries-list": "^3.4.1"
   },
   "peerDependencies": {
     "react": "^19.2.8"
@@ -31,12 +32,12 @@
   "devDependencies": {
     "@globaldata/config": "workspace:*",
     "@storybook/react-vite": "10.5.6",
-    "storybook": "10.5.6",
-    "@vitejs/plugin-react": "^6.0.4",
     "@types/react": "^19.2.18",
+    "@vitejs/plugin-react": "^6.0.4",
     "oxlint": "^1.75.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
+    "storybook": "10.5.6",
     "stylelint": "^17.14.1",
     "typescript": "~6.0.3",
     "vite": "^8.2.0",

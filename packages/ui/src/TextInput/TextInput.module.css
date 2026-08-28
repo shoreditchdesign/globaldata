@@ -143,6 +143,16 @@
   outline: none;
 }
 
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  caret-color: var(--text-input-text-color);
+  box-shadow: inset 0 0 0 1000px var(--text-input-background);
+  -webkit-text-fill-color: var(--text-input-text-color);
+  transition: background-color 99999s ease 0s;
+}
+
 .input::placeholder {
   color: var(--text-input-placeholder-color);
   font-family: var(--text-input-font-family);

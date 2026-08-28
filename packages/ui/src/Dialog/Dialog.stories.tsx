@@ -33,6 +33,7 @@ function isFocusInsideDialog(dialog: HTMLElement, active: Element | null) {
 
 async function waitForDialogFocus(dialog: HTMLElement) {
   await waitFor(() => {
+    expect(dialog).toBeVisible();
     expect(dialog).toHaveFocus();
   });
 }
@@ -85,6 +86,9 @@ const centerTriggerDecorator: Story["decorators"] = [
 export const Default: Story = {
   parameters: {
     layout: "fullscreen",
+    chromatic: {
+      viewports: [375, 768, 1200],
+    },
   },
   args: {
     defaultOpen: true,
@@ -104,17 +108,23 @@ export const Default: Story = {
     const page = getPage(canvasElement);
     const dialog = page.getByRole("dialog", { name: "Example dialog" });
 
-    await expect(dialog).toBeVisible();
+    await waitFor(() => {
+      expect(dialog).toBeVisible();
+    });
     await expect(dialog).toHaveAccessibleName("Example dialog");
     await expect(dialog).toHaveAttribute("aria-modal", "true");
     await waitForDialogFocus(dialog);
     await expect(page.getByRole("button", { name: "Close" })).toBeEnabled();
+    expect(dialog.scrollWidth).toBeLessThanOrEqual(dialog.clientWidth + 1);
   },
 };
 
 export const WithTrigger: Story = {
   parameters: {
     layout: "fullscreen",
+    chromatic: {
+      viewports: [375, 768, 1200],
+    },
   },
   decorators: centerTriggerDecorator,
   args: {
@@ -155,7 +165,9 @@ export const WithTriggerInteractions: Story = {
     const close = page.getByRole("button", { name: "Close" });
     const continueButton = page.getByRole("button", { name: "Continue" });
 
-    await expect(dialog).toBeVisible();
+    await waitFor(() => {
+      expect(dialog).toBeVisible();
+    });
     await expect(dialog).toHaveAccessibleName("Example dialog");
     await expect(dialog).toHaveAttribute("aria-modal", "true");
     await waitForDialogFocus(dialog);
@@ -195,7 +207,9 @@ export const WithTriggerInteractions: Story = {
 
     const reopened = page.getByRole("dialog", { name: "Example dialog" });
 
-    await expect(reopened).toBeVisible();
+    await waitFor(() => {
+      expect(reopened).toBeVisible();
+    });
     await waitForDialogFocus(reopened);
 
     await userEvent.keyboard("{Escape}");
@@ -207,7 +221,9 @@ export const WithTriggerInteractions: Story = {
 export const OverlayDismiss: Story = {
   parameters: {
     layout: "fullscreen",
+    chromatic: { disableSnapshot: true },
   },
+  tags: ["!dev"],
   decorators: centerTriggerDecorator,
   render: () => (
     <Dialog>
@@ -228,7 +244,9 @@ export const OverlayDismiss: Story = {
 
     const dialog = page.getByRole("dialog", { name: "Example dialog" });
 
-    await expect(dialog).toBeVisible();
+    await waitFor(() => {
+      expect(dialog).toBeVisible();
+    });
 
     await clickOutsideDialog(canvasElement, dialog);
 
@@ -239,7 +257,9 @@ export const OverlayDismiss: Story = {
 export const DisablePointerDismissal: Story = {
   parameters: {
     layout: "fullscreen",
+    chromatic: { disableSnapshot: true },
   },
+  tags: ["!dev"],
   args: {
     defaultOpen: true,
     disablePointerDismissal: true,
@@ -258,18 +278,24 @@ export const DisablePointerDismissal: Story = {
     const page = getPage(canvasElement);
     const dialog = page.getByRole("dialog", { name: "Example dialog" });
 
-    await expect(dialog).toBeVisible();
+    await waitFor(() => {
+      expect(dialog).toBeVisible();
+    });
 
     await clickOutsideDialog(canvasElement, dialog);
 
-    await expect(dialog).toBeVisible();
+    await waitFor(() => {
+      expect(dialog).toBeVisible();
+    });
   },
 };
 
 export const WithoutDescription: Story = {
   parameters: {
     layout: "fullscreen",
+    chromatic: { disableSnapshot: true },
   },
+  tags: ["!dev"],
   args: {
     defaultOpen: true,
   },
@@ -284,7 +310,9 @@ export const WithoutDescription: Story = {
     const page = getPage(canvasElement);
     const dialog = page.getByRole("dialog", { name: "Example dialog" });
 
-    await expect(dialog).toBeVisible();
+    await waitFor(() => {
+      expect(dialog).toBeVisible();
+    });
     await expect(dialog).toHaveAccessibleName("Example dialog");
   },
 };
@@ -292,7 +320,9 @@ export const WithoutDescription: Story = {
 export const NamedWithAriaLabel: Story = {
   parameters: {
     layout: "fullscreen",
+    chromatic: { disableSnapshot: true },
   },
+  tags: ["!dev"],
   args: {
     defaultOpen: true,
   },
@@ -307,7 +337,9 @@ export const NamedWithAriaLabel: Story = {
     const page = getPage(canvasElement);
     const dialog = page.getByRole("dialog", { name: "Settings dialog" });
 
-    await expect(dialog).toBeVisible();
+    await waitFor(() => {
+      expect(dialog).toBeVisible();
+    });
     await expect(dialog).toHaveAccessibleName("Settings dialog");
   },
 };
@@ -315,6 +347,9 @@ export const NamedWithAriaLabel: Story = {
 export const LongContent: Story = {
   parameters: {
     layout: "fullscreen",
+    chromatic: {
+      viewports: [375, 768, 1200],
+    },
   },
   args: {
     defaultOpen: true,
@@ -342,7 +377,9 @@ export const LongContent: Story = {
     const heading = page.getByRole("heading", { name: "Long content" });
     const footerButton = page.getByRole("button", { name: "Continue" });
 
-    await expect(dialog).toBeVisible();
+    await waitFor(() => {
+      expect(dialog).toBeVisible();
+    });
     await expect(heading).toBeVisible();
     await expect(footerButton).toBeVisible();
 
@@ -362,17 +399,28 @@ export const LongContent: Story = {
     expect(footerBox.bottom).toBeLessThanOrEqual(dialogBox.bottom + 1);
     expect(bodyBox.bottom).toBeLessThanOrEqual(footerBox.top + 1);
     expect(dialog.scrollHeight).toBeLessThanOrEqual(dialog.clientHeight + 1);
+    expect(dialog.scrollWidth).toBeLessThanOrEqual(dialog.clientWidth + 1);
     expect(body!.scrollHeight).toBeGreaterThan(body!.clientHeight);
   },
 };
 
 export const ProfileAndFocus: Story = {
+  name: "Profile & Focus — Example Composition",
   parameters: {
     layout: "fullscreen",
+    docs: {
+      description: {
+        story:
+          "Example composition built from reusable Dialog and other primitives. Not a public library component.",
+      },
+    },
     a11y: {
       config: {
         rules: [{ id: "link-in-text-block", enabled: false }],
       },
+    },
+    chromatic: {
+      viewports: [375, 768, 1200],
     },
   },
   args: {
@@ -396,9 +444,11 @@ export const ProfileAndFocus: Story = {
       name: "Your Profile and Focus",
     });
     const footerButton = page.getByRole("button", { name: "Save Preferences" });
-    const geography = page.getByRole("combobox", { name: "Geography Focus" });
+    const geography = page.getByRole("button", { name: "Geography Focus" });
 
-    await expect(dialog).toBeVisible();
+    await waitFor(() => {
+      expect(dialog).toBeVisible();
+    });
     await expect(heading).toBeVisible();
     await expect(footerButton).toBeVisible();
     await expect(geography).toBeEnabled();
@@ -415,6 +465,7 @@ export const ProfileAndFocus: Story = {
 
     expect(bodyBox.bottom).toBeLessThanOrEqual(footerBox.top + 1);
     expect(dialog.scrollHeight).toBeLessThanOrEqual(dialog.clientHeight + 1);
+    expect(dialog.scrollWidth).toBeLessThanOrEqual(dialog.clientWidth + 1);
   },
 };
 
@@ -435,7 +486,7 @@ export const ProfileAndFocusInteractions: Story = {
   render: ProfileAndFocus.render,
   play: async ({ canvasElement }) => {
     const page = getPage(canvasElement);
-    const geography = page.getByRole("combobox", { name: "Geography Focus" });
+    const geography = page.getByRole("button", { name: "Geography Focus" });
     const mobile = page.getByRole("textbox", { name: "Mobile Number" });
 
     await expect(geography).toBeEnabled();
@@ -446,24 +497,68 @@ export const ProfileAndFocusInteractions: Story = {
       expect(geography).toHaveAttribute("aria-expanded", "true");
     });
 
-    const listbox = page.getByRole("listbox");
-
-    await expect(listbox).toBeVisible();
-    await expect(page.getByRole("option", { name: "United Kingdom" })).toBeVisible();
-
-    await userEvent.click(page.getByRole("option", { name: "United Kingdom" }));
+    const unitedKingdom = page.getByRole("checkbox", {
+      name: "United Kingdom",
+    });
 
     await waitFor(() => {
-      expect(page.queryByRole("listbox")).toBeNull();
+      expect(unitedKingdom).toBeVisible();
     });
-    await expect(geography).toHaveTextContent("United Kingdom");
-    await expect(
-      page.getAllByText(
-        "None selected – add this to tailor our content to your business objectives.",
-      ),
-    ).toHaveLength(2);
+    await expect(unitedKingdom).not.toBeChecked();
 
-    const sector = page.getByRole("combobox", { name: "Sector Focus" });
+    await userEvent.click(unitedKingdom);
+
+    await expect(unitedKingdom).toBeChecked();
+    await expect(geography).toHaveAttribute("aria-expanded", "true");
+    await expect(
+      page.queryByRole("button", { name: "Remove United Kingdom" }),
+    ).not.toBeInTheDocument();
+
+    await userEvent.click(page.getByRole("button", { name: "Submit" }));
+
+    await waitFor(() => {
+      expect(geography).toHaveAttribute("aria-expanded", "false");
+    });
+
+    const geographyField = within(geography.parentElement as HTMLElement);
+    const emptyHint =
+      "None selected – add this to tailor our content to your business objectives.";
+
+    await waitFor(() => {
+      expect(
+        geographyField.getByRole("button", { name: "Remove United Kingdom" }),
+      ).toBeVisible();
+    });
+    await expect(geographyField.queryByText(emptyHint)).not.toBeInTheDocument();
+    await expect(geography).toHaveTextContent("Geography Focus");
+    await expect(page.getAllByText(emptyHint)).toHaveLength(2);
+
+    await userEvent.click(geography);
+    await waitFor(() => {
+      expect(geography).toHaveAttribute("aria-expanded", "true");
+    });
+    await expect(
+      geographyField.getByRole("checkbox", { name: "United Kingdom" }),
+    ).toBeChecked();
+    await userEvent.keyboard("{Escape}");
+    await waitFor(() => {
+      expect(geography).toHaveAttribute("aria-expanded", "false");
+    });
+    await expect(
+      geographyField.getByRole("button", { name: "Remove United Kingdom" }),
+    ).toBeVisible();
+
+    await userEvent.click(
+      geographyField.getByRole("button", { name: "Remove United Kingdom" }),
+    );
+    await waitFor(() => {
+      expect(
+        geographyField.queryByRole("button", { name: "Remove United Kingdom" }),
+      ).not.toBeInTheDocument();
+    });
+    await expect(geographyField.getByText(emptyHint)).toBeVisible();
+
+    const sector = page.getByRole("button", { name: "Sector Focus" });
 
     await userEvent.click(sector);
     await waitFor(() => {
@@ -477,5 +572,123 @@ export const ProfileAndFocusInteractions: Story = {
 
     await userEvent.type(mobile, "7700900000");
     await expect(mobile).toHaveValue("7700900000");
+    await expect(mobile).toHaveFocus();
+
+    const mobileControl = mobile.parentElement as HTMLElement;
+    const phoneGroup = mobileControl.parentElement
+      ?.parentElement as HTMLElement;
+
+    expect(getComputedStyle(mobile).outlineStyle).toBe("none");
+    expect(getComputedStyle(mobileControl).outlineStyle).toBe("none");
+    expect(getComputedStyle(phoneGroup).outlineStyle).toBe("none");
+    await waitFor(() => {
+      expect(getComputedStyle(phoneGroup).borderTopColor).toBe("rgb(5, 10, 22)");
+      expect(getComputedStyle(mobile).backgroundColor).toBe("rgb(255, 255, 255)");
+    });
+
+    const countryCode = page.getByRole("combobox", { name: "Country Code" });
+
+    await userEvent.click(countryCode);
+    await waitFor(() => {
+      expect(countryCode).toHaveAttribute("aria-expanded", "true");
+    });
+
+    const countryCodePopup = page.getByRole("listbox");
+
+    await waitFor(() => {
+      expect(countryCodePopup).toBeVisible();
+    });
+
+    const groupBox = phoneGroup.getBoundingClientRect();
+    const popupBox = countryCodePopup.getBoundingClientRect();
+
+    expect(Math.abs(popupBox.left - groupBox.left)).toBeLessThan(3);
+    expect(Math.abs(popupBox.right - groupBox.right)).toBeLessThan(3);
+
+    await userEvent.click(countryCode);
+    await waitFor(() => {
+      expect(countryCode).toHaveAttribute("aria-expanded", "false");
+    });
+
+    const country = page.getByRole("combobox", { name: "Country" });
+    const countryClosedWidth = country.getBoundingClientRect().width;
+
+    await userEvent.click(country);
+    await waitFor(() => {
+      expect(country).toHaveAttribute("aria-expanded", "true");
+    });
+
+    const countryPopup = page.getByRole("listbox");
+
+    await waitFor(() => {
+      expect(countryPopup).toBeVisible();
+    });
+
+    const countryBox = country.getBoundingClientRect();
+    const countryPanel = countryPopup.parentElement as HTMLElement;
+    const countryPanelBox = countryPanel.getBoundingClientRect();
+    const dialogBox = page
+      .getByRole("dialog", { name: "Your Profile and Focus" })
+      .getBoundingClientRect();
+    const countrySearch = page.getByRole("searchbox", {
+      name: "Search countries",
+    });
+    const countrySearchBox = countrySearch.getBoundingClientRect();
+
+    expect(Math.abs(country.getBoundingClientRect().width - countryClosedWidth)).toBeLessThan(1);
+    expect(Math.abs(countryPanelBox.left - countryBox.left)).toBeLessThan(2);
+    expect(Math.abs(countryPanelBox.right - countryBox.right)).toBeLessThan(2);
+    expect(Math.abs(countryPanelBox.width - countryBox.width)).toBeLessThan(2);
+    expect(countryPanelBox.left).toBeGreaterThanOrEqual(dialogBox.left - 1);
+    expect(countryPanelBox.right).toBeLessThanOrEqual(dialogBox.right + 1);
+    expect(countrySearchBox.left).toBeGreaterThan(countryPanelBox.left);
+    expect(countrySearchBox.right).toBeLessThan(countryPanelBox.right);
+    expect(getComputedStyle(countryPanel).boxSizing).toBe("border-box");
+
+    await userEvent.click(country);
+    await waitFor(() => {
+      expect(country).toHaveAttribute("aria-expanded", "false");
+    });
+
+    const department = page.getByRole("textbox", { name: "Job Department" });
+    const jobTitle = page.getByRole("textbox", { name: "Job Title" });
+
+    await userEvent.type(department, "Marketing");
+    await expect(department).toHaveValue("Marketing");
+    await expect(jobTitle).toBeEnabled();
+
+    await expect(mobile).toHaveAttribute("inputmode", "tel");
+    await expect(
+      page.queryByText("Enter a valid mobile number"),
+    ).not.toBeInTheDocument();
+
+    await userEvent.clear(mobile);
+    await userEvent.type(mobile, "not a number");
+    await expect(mobile).toHaveValue("not a number");
+    await expect(
+      page.queryByText("Enter a valid mobile number"),
+    ).not.toBeInTheDocument();
+
+    await userEvent.click(jobTitle);
+    await waitFor(() => {
+      expect(page.getByText("Enter a valid mobile number")).toBeVisible();
+    });
+
+    await userEvent.click(mobile);
+    await userEvent.clear(mobile);
+    await userEvent.type(mobile, "+44 7700 900000");
+    await waitFor(() => {
+      expect(
+        page.queryByText("Enter a valid mobile number"),
+      ).not.toBeInTheDocument();
+    });
+
+    await userEvent.clear(mobile);
+    await userEvent.type(mobile, "abc");
+    await userEvent.click(page.getByRole("button", { name: "Save Preferences" }));
+    await waitFor(() => {
+      expect(page.getByText("Enter a valid mobile number")).toBeVisible();
+    });
+    await expect(mobile).toHaveFocus();
   },
 };
