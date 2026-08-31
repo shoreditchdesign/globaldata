@@ -30,6 +30,7 @@ Reusable components in `@globaldata/ui`:
 - `Pagination` (`PaginationIndicators`, `PaginationPrevious`, `PaginationNext`)
 - `Table`
 - `Card`
+- `ArticleRow`
 - `CarouselCard`
 - `Carousel`
 

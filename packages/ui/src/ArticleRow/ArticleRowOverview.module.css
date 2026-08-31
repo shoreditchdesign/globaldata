@@ -1,0 +1,23 @@
+.previewCard,
+.showcaseStack,
+.storyFrame {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+.storyFrame {
+  padding: 24px;
+}
+
+.previewCard {
+  background: #ffffff;
+  border: 1px solid #dbe2f6;
+  border-radius: 16px;
+}
+
+.showcaseStack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}

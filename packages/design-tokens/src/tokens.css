@@ -266,4 +266,28 @@
   --carousel-icon-down-rotate: 90deg;
   --carousel-icon-up-rotate: -90deg;
   --carousel-control-padding: 0;
+
+  --article-row-width: 100%;
+  --article-row-min-width: 0;
+  --article-row-background: #ffffff;
+  --article-row-padding: 10px 12px 13px;
+  --article-row-gap: 16px;
+  --article-row-text-margin: 0;
+  --article-row-title-color: #08216a;
+  --article-row-title-font-family: var(--font-family-manrope);
+  --article-row-title-font-size: 12px;
+  --article-row-title-font-weight: 400;
+  --article-row-title-line-height: 20px;
+  --article-row-date-color: #686868;
+  --article-row-date-font-family: var(--font-family-manrope);
+  --article-row-date-font-size: 12px;
+  --article-row-date-font-weight: 400;
+  --article-row-date-line-height: 20px;
+  --article-row-separator-width: var(--table-row-separator-width);
+  --article-row-separator-color: var(--table-separator-color);
+  --article-row-title-decoration: none;
+  --article-row-title-hover-decoration: underline;
+  --article-row-title-focus-outline-width: var(--focus-ring-width);
+  --article-row-title-focus-outline-color: var(--focus-ring-color);
+  --article-row-title-focus-outline-offset: var(--focus-ring-offset);
 }
