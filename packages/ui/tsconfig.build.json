@@ -21,6 +21,7 @@
     "src/ArticleBlock/articleBlockDemo.tsx",
     "src/CarouselCard/carouselCardDemo.tsx",
     "src/Carousel/carouselDemo.tsx",
+    "src/LoginForm/loginFormDemo.tsx",
     "src/TextInput/HoldToShowPasswordField.tsx"
   ]
 }

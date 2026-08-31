@@ -1,0 +1,150 @@
+.root {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: var(--login-form-width);
+  min-width: var(--login-form-min-width);
+  padding: var(--login-form-padding);
+  padding-bottom: var(--login-form-padding-bottom);
+  background: var(--login-form-background);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--login-form-header-gap);
+  min-width: var(--login-form-min-width);
+  margin-bottom: var(--login-form-header-to-fields);
+}
+
+.title {
+  min-width: var(--login-form-min-width);
+  margin: var(--login-form-title-margin);
+
+  font-family: var(--login-form-title-font-family);
+  font-size: var(--login-form-title-font-size);
+  font-weight: var(--login-form-title-font-weight);
+  letter-spacing: var(--login-form-title-letter-spacing);
+  color: var(--login-form-title-color);
+  overflow-wrap: break-word;
+}
+
+.signUp,
+.forgot {
+  flex-shrink: 0;
+
+  font-family: var(--login-form-link-font-family);
+  font-size: var(--login-form-link-font-size);
+  font-weight: var(--login-form-link-font-weight);
+  line-height: var(--login-form-link-line-height);
+  color: var(--login-form-link-color);
+  text-align: right;
+  text-decoration: var(--login-form-link-decoration);
+}
+
+a.signUp:hover,
+a.forgot:hover {
+  text-decoration: var(--login-form-link-hover-decoration);
+}
+
+a.signUp:focus-visible,
+a.forgot:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--login-form-fields-gap);
+  min-width: var(--login-form-min-width);
+}
+
+.utility {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--login-form-utility-gap);
+  min-width: var(--login-form-min-width);
+  margin-top: var(--login-form-utility-offset);
+}
+
+.forgot {
+  text-align: left;
+}
+
+.remember {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--login-form-remember-gap);
+
+  font-family: var(--login-form-remember-font-family);
+  font-size: var(--login-form-remember-font-size);
+  font-weight: var(--login-form-remember-font-weight);
+  line-height: var(--login-form-remember-line-height);
+  color: var(--login-form-remember-color);
+  cursor: pointer;
+}
+
+.submit {
+  width: var(--login-form-fill);
+  margin-top: var(--login-form-submit-offset);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--login-form-divider-gap);
+  min-width: var(--login-form-min-width);
+  margin-top: var(--login-form-divider-offset);
+}
+
+.dividerLine {
+  flex: 1 1 auto;
+  min-width: var(--login-form-min-width);
+  height: var(--login-form-divider-height);
+  background: var(--login-form-divider-color);
+}
+
+.dividerLabel {
+  flex-shrink: 0;
+
+  font-family: var(--login-form-or-font-family);
+  font-size: var(--login-form-or-font-size);
+  font-weight: var(--login-form-or-font-weight);
+  line-height: var(--login-form-or-line-height);
+  color: var(--login-form-or-color);
+  text-align: center;
+}
+
+.secondary {
+  display: flex;
+  gap: var(--login-form-secondary-gap);
+  min-width: var(--login-form-min-width);
+  margin-top: var(--login-form-secondary-offset);
+}
+
+.actionButton {
+  flex: 1 1 auto;
+  width: var(--login-form-fill);
+  min-width: var(--login-form-min-width);
+}
+
+@media (max-width: 520px) {
+  .header,
+  .utility,
+  .secondary {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .signUp {
+    text-align: left;
+  }
+
+  .remember {
+    justify-content: space-between;
+  }
+}

@@ -58,3 +58,6 @@ export type { CarouselCardProps } from "./CarouselCard/CarouselCard";
 
 export { Carousel } from "./Carousel/Carousel";
 export type { CarouselItem, CarouselProps } from "./Carousel/Carousel";
+
+export { LoginForm } from "./LoginForm/LoginForm";
+export type { LoginFormProps } from "./LoginForm/LoginForm";

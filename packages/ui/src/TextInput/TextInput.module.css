@@ -13,6 +13,7 @@
   block-size: var(--text-input-height);
 
   background: var(--text-input-label-background);
+  border: var(--text-input-border-width) solid var(--text-input-border-color);
   border-radius: var(--text-input-radius);
 }
 
@@ -22,6 +23,7 @@
 }
 
 .root[data-invalid] .control {
+  border-color: var(--text-input-error-color);
   box-shadow: 0 0 0 var(--border-width-default) var(--text-input-error-color);
 }
 
@@ -40,6 +42,8 @@
   padding-inline: var(--space-2);
 
   background: var(--text-input-label-background);
+  border-inline-end: var(--text-input-border-width) solid
+    var(--text-input-border-color);
   color: var(--text-input-label-color);
 }
 
@@ -50,11 +54,14 @@
 }
 
 .suffix {
+  box-sizing: border-box;
   display: inline-flex;
   flex-shrink: 0;
   align-items: center;
 
   background: var(--text-input-label-background);
+  border-inline-start: var(--text-input-border-width) solid
+    var(--text-input-border-color);
   color: var(--text-input-label-color);
 }
 
