@@ -42,3 +42,9 @@ export type { TableColumnDef, TableProps } from "./Table/Table";
 
 export { Card } from "./Card/Card";
 export type { CardProps } from "./Card/Card";
+
+export { CarouselCard } from "./CarouselCard/CarouselCard";
+export type { CarouselCardProps } from "./CarouselCard/CarouselCard";
+
+export { Carousel } from "./Carousel/Carousel";
+export type { CarouselItem, CarouselProps } from "./Carousel/Carousel";

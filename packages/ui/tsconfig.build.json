@@ -17,6 +17,8 @@
     "src/Table/tableDemoData.ts",
     "src/Table/TableDemoLink.tsx",
     "src/Card/cardDemo.tsx",
+    "src/CarouselCard/carouselCardDemo.tsx",
+    "src/Carousel/carouselDemo.tsx",
     "src/TextInput/HoldToShowPasswordField.tsx"
   ]
 }

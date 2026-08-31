@@ -1,0 +1,59 @@
+.storyFrame,
+.storyPreview,
+.livePreview,
+.previewCard,
+.showcaseFeatured {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+.storyFrame {
+  padding: 24px;
+}
+
+.livePreview {
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #dbe2f6;
+  border-radius: 16px;
+}
+
+.showcaseFeatured,
+.previewCard,
+.storyPreview {
+  max-width: 784px;
+}
+
+.storyPreview {
+  padding: 24px;
+  background: #f5f7fd;
+  border: 1px solid #dbe2f6;
+  border-radius: 16px;
+}
+
+.longContentRow > :global(section) {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+
+@media (max-width: 520px) {
+  .livePreview {
+    padding: 16px;
+  }
+}
+
+.compactCard {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 280px;
+}
+
+.compactColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}

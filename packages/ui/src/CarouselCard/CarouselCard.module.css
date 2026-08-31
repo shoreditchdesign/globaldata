@@ -1,0 +1,168 @@
+.root {
+  box-sizing: border-box;
+  width: var(--carousel-card-width);
+  min-width: var(--carousel-card-min-width);
+}
+
+.featured {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--carousel-card-featured-gap);
+}
+
+.compact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: var(--carousel-card-compact-min-height);
+  padding: var(--carousel-card-compact-padding);
+  background: var(--carousel-card-compact-background);
+  transition: background-color var(--carousel-card-compact-hover-duration) ease;
+}
+
+.compact:hover {
+  background: var(--carousel-card-compact-hover-background);
+}
+
+.media {
+  position: relative;
+  box-sizing: border-box;
+  flex: 0 1 var(--carousel-card-featured-media-width);
+  align-self: stretch;
+  width: var(--carousel-card-featured-media-width);
+  max-width: var(--carousel-card-width);
+  min-width: var(--carousel-card-min-width);
+  height: auto;
+  aspect-ratio: var(--carousel-card-featured-media-aspect);
+  overflow: hidden;
+}
+
+.media > * {
+  position: absolute;
+  inset: 0;
+  width: var(--carousel-card-width);
+  height: var(--carousel-card-width);
+}
+
+.media :global(img),
+.media :global(video) {
+  display: block;
+  object-fit: var(--carousel-card-media-fit);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  flex: 1 1 var(--carousel-card-min-width);
+  min-width: var(--carousel-card-min-width);
+}
+
+.featured .content {
+  flex: 1 1 var(--carousel-card-min-width);
+  align-self: stretch;
+  max-width: var(--carousel-card-featured-content-width);
+  padding: var(--carousel-card-featured-content-padding);
+}
+
+.featured:not(:has(.media)) .content {
+  max-width: var(--carousel-card-width);
+}
+
+.eyebrow {
+  flex-shrink: 0;
+  width: var(--carousel-card-eyebrow-width);
+  max-width: var(--carousel-card-width);
+  margin: var(--carousel-card-text-margin);
+  padding: var(--carousel-card-eyebrow-padding);
+
+  font-family: var(--carousel-card-eyebrow-font-family);
+  font-size: var(--carousel-card-eyebrow-font-size);
+  font-weight: var(--carousel-card-eyebrow-font-weight);
+  line-height: var(--carousel-card-eyebrow-line-height);
+  color: var(--carousel-card-eyebrow-color);
+
+  background: var(--carousel-card-eyebrow-background);
+}
+
+.compact:hover .eyebrow {
+  color: var(--carousel-card-eyebrow-color);
+  background: var(--carousel-card-eyebrow-background);
+}
+
+.title {
+  margin: var(--carousel-card-text-margin);
+  min-width: var(--carousel-card-min-width);
+
+  font-family: var(--carousel-card-title-font-family);
+  color: var(--carousel-card-title-color);
+  overflow-wrap: break-word;
+}
+
+.featured .title {
+  margin-block-start: var(--carousel-card-featured-title-gap);
+  font-size: var(--carousel-card-featured-title-font-size);
+  font-weight: var(--carousel-card-featured-title-font-weight);
+  line-height: var(--carousel-card-featured-title-line-height);
+}
+
+.compact .title {
+  margin-block-start: var(--carousel-card-compact-title-gap);
+  font-size: var(--carousel-card-compact-title-font-size);
+  font-weight: var(--carousel-card-compact-title-font-weight);
+  line-height: var(--carousel-card-compact-title-line-height);
+}
+
+.description {
+  margin: var(--carousel-card-text-margin);
+  margin-block-start: var(--carousel-card-featured-description-gap);
+  min-width: var(--carousel-card-min-width);
+
+  font-family: var(--carousel-card-featured-description-font-family);
+  font-size: var(--carousel-card-featured-description-font-size);
+  font-weight: var(--carousel-card-featured-description-font-weight);
+  line-height: var(--carousel-card-featured-description-line-height);
+  color: var(--carousel-card-featured-description-color);
+  overflow-wrap: break-word;
+}
+
+.action {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--carousel-card-action-gap);
+  margin-block-start: var(--carousel-card-action-margin-top);
+
+  font-family: var(--carousel-card-action-font-family);
+  font-size: var(--carousel-card-action-font-size);
+  font-weight: var(--carousel-card-action-font-weight);
+  line-height: var(--carousel-card-action-line-height);
+  color: var(--carousel-card-action-color);
+}
+
+.actionLabel,
+.actionArrow {
+  min-width: var(--carousel-card-min-width);
+}
+
+.actionArrow {
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .featured {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .featured .media {
+    flex: 0 0 auto;
+    width: var(--carousel-card-width);
+  }
+
+  .featured .content {
+    flex: 0 0 auto;
+    max-width: var(--carousel-card-width);
+  }
+}

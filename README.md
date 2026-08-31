@@ -30,6 +30,8 @@ Reusable components in `@globaldata/ui`:
 - `Pagination` (`PaginationIndicators`, `PaginationPrevious`, `PaginationNext`)
 - `Table`
 - `Card`
+- `CarouselCard`
+- `Carousel`
 
 Design tokens live in `@globaldata/design-tokens`. Storybook is the main component documentation.
 
