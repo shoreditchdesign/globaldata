@@ -4,6 +4,7 @@
   --font-family-poppins: "Poppins", sans-serif;
   --font-family-manrope: "Manrope", sans-serif;
   --font-family-helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif;
+  --font-family-montserrat: "Montserrat", sans-serif;
 
   --color-brand: #0034ec;
 
@@ -386,4 +387,58 @@
   --login-form-or-font-size: 16px;
   --login-form-or-font-weight: 400;
   --login-form-or-line-height: 24px;
+
+  --navigation-bar-background: #ffffff;
+  --navigation-bar-width: 100%;
+  --navigation-bar-min-width: 0;
+  --navigation-bar-padding-block: 7px;
+  --navigation-bar-padding-inline: 16px;
+  --navigation-bar-logo-width: 155px;
+  --navigation-bar-logo-height: 46px;
+  --navigation-bar-logo-color: #242528;
+  --navigation-bar-logo-gap: 40px;
+  --navigation-bar-items-gap: 25px;
+  --navigation-bar-item-color: #050a16;
+  --navigation-bar-item-font-family: var(--font-family-montserrat);
+  --navigation-bar-item-font-size: 14px;
+  --navigation-bar-item-font-weight: 500;
+  --navigation-bar-item-line-height: 20px;
+  --navigation-bar-item-accent-color: #ff5d2b;
+  --navigation-bar-item-accent-line-height: 20px;
+  --navigation-bar-section-gap: 25px;
+  --navigation-bar-user-gap: 22px;
+  --navigation-bar-user-color: #050a16;
+  --navigation-bar-user-font-family: var(--font-family-montserrat);
+  --navigation-bar-user-font-size: 12px;
+  --navigation-bar-user-font-weight: 700;
+  --navigation-bar-user-line-height: 20px;
+  --navigation-bar-badge-background: #b4e8ff;
+  --navigation-bar-badge-accent-background: #ffe8e0;
+  --navigation-bar-badge-color: #050a16;
+  --navigation-bar-badge-radius: 5px;
+  --navigation-bar-badge-min-width: 32px;
+  --navigation-bar-badge-font-family: var(--font-family-montserrat);
+  --navigation-bar-badge-font-size: 8px;
+  --navigation-bar-badge-font-weight: 700;
+  --navigation-bar-badge-line-height: 12px;
+  --navigation-bar-badge-padding: 1px 6px;
+  --navigation-bar-badge-offset: 6px;
+  --navigation-bar-link-decoration: none;
+  --navigation-bar-mega-background: #f1f1f1;
+  --navigation-bar-mega-padding: 28px 32px 32px;
+  --navigation-bar-mega-column-gap: 40px;
+  --navigation-bar-mega-row-gap: 28px;
+  --navigation-bar-mega-heading-color: #050a16;
+  --navigation-bar-mega-heading-font-family: var(--font-family-poppins);
+  --navigation-bar-mega-heading-font-size: 14px;
+  --navigation-bar-mega-heading-font-weight: 500;
+  --navigation-bar-mega-heading-line-height: 20px;
+  --navigation-bar-mega-heading-gap: 15px;
+  --navigation-bar-mega-link-color: #050a16;
+  --navigation-bar-mega-link-font-family: var(--font-family-poppins);
+  --navigation-bar-mega-link-font-size: 12.8px;
+  --navigation-bar-mega-link-font-weight: 400;
+  --navigation-bar-mega-link-line-height: 20.5px;
+  --navigation-bar-mega-link-gap: 8px;
+  --navigation-bar-mega-disabled-color: var(--text-input-hint-color);
 }

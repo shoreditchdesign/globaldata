@@ -61,3 +61,11 @@ export type { CarouselItem, CarouselProps } from "./Carousel/Carousel";
 
 export { LoginForm } from "./LoginForm/LoginForm";
 export type { LoginFormProps } from "./LoginForm/LoginForm";
+
+export { NavigationBar } from "./NavigationBar/NavigationBar";
+export type {
+  NavigationBarGroup,
+  NavigationBarItem,
+  NavigationBarLink,
+  NavigationBarProps,
+} from "./NavigationBar/NavigationBar";

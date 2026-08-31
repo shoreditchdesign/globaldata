@@ -1,0 +1,34 @@
+.overviewRoot {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.overviewRoot :global([class*="page"]) {
+  width: 100%;
+  max-width: none;
+}
+
+.livePreview,
+.storyFrame {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  background: #ffffff;
+}
+
+.livePreview {
+  border: 1px solid #dbe2f6;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.storyFrame {
+  max-width: 100%;
+}
+
+.note {
+  margin: 0;
+  color: #667189;
+  font-size: 14px;
+  line-height: 1.45;
+}

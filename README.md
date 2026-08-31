@@ -35,6 +35,7 @@ Reusable components in `@globaldata/ui`:
 - `CarouselCard`
 - `Carousel`
 - `LoginForm`
+- `NavigationBar`
 
 Design tokens live in `@globaldata/design-tokens`. Storybook is the main component documentation.
 
