@@ -18,6 +18,7 @@
     "src/Table/TableDemoLink.tsx",
     "src/Card/cardDemo.tsx",
     "src/ArticleRow/articleRowDemo.tsx",
+    "src/ArticleBlock/articleBlockDemo.tsx",
     "src/CarouselCard/carouselCardDemo.tsx",
     "src/Carousel/carouselDemo.tsx",
     "src/TextInput/HoldToShowPasswordField.tsx"

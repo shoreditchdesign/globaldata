@@ -1,0 +1,26 @@
+.livePreview,
+.storyFrame {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+.storyFrame {
+  padding: 24px;
+}
+
+.livePreview {
+  width: 100%;
+  height: auto;
+  padding: 24px;
+  overflow: visible;
+  background: #ffffff;
+  border: 1px solid #dbe2f6;
+  border-radius: 16px;
+}
+
+@media (max-width: 520px) {
+  .livePreview {
+    padding: 16px;
+  }
+}

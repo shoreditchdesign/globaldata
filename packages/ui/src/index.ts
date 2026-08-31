@@ -46,6 +46,13 @@ export type { CardProps } from "./Card/Card";
 export { ArticleRow } from "./ArticleRow/ArticleRow";
 export type { ArticleRowProps } from "./ArticleRow/ArticleRow";
 
+export { ArticleBlock } from "./ArticleBlock/ArticleBlock";
+export type {
+  ArticleBlockItem,
+  ArticleBlockProps,
+  ArticleBlockTab,
+} from "./ArticleBlock/ArticleBlock";
+
 export { CarouselCard } from "./CarouselCard/CarouselCard";
 export type { CarouselCardProps } from "./CarouselCard/CarouselCard";
 

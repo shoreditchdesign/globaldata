@@ -31,6 +31,7 @@ Reusable components in `@globaldata/ui`:
 - `Table`
 - `Card`
 - `ArticleRow`
+- `ArticleBlock`
 - `CarouselCard`
 - `Carousel`
 
