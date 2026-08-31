@@ -16,6 +16,7 @@
     "src/Dialog/profileCountries.ts",
     "src/Table/tableDemoData.ts",
     "src/Table/TableDemoLink.tsx",
+    "src/Card/cardDemo.tsx",
     "src/TextInput/HoldToShowPasswordField.tsx"
   ]
 }

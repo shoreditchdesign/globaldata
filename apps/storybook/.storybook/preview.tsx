@@ -1,4 +1,5 @@
 import "@fontsource/poppins/latin-400.css";
+import "@fontsource/poppins/latin-500.css";
 import "@fontsource/manrope/400.css";
 import "@fontsource/manrope/500.css";
 import "@fontsource/manrope/600.css";

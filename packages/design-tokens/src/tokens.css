@@ -159,4 +159,28 @@
   --table-min-height: 0;
   --table-default-height: 420px;
   --table-empty-color: #515255;
+
+  --card-background: #060c25;
+  --card-color: #e2e2e2;
+  --card-radius: 0;
+  --card-padding: 12px 12px 18px 12px;
+  --card-gap: 12px;
+  --card-top-gap: 12px;
+  --card-width: 100%;
+  --card-min-width: 0;
+  --card-min-height: 243px;
+  --card-date-font-family: var(--font-family-manrope);
+  --card-date-font-size: 10px;
+  --card-date-font-weight: 400;
+  --card-date-line-height: 10px;
+  --card-date-color: #e2e2e2;
+  --card-title-font-family: var(--font-family-poppins);
+  --card-title-font-size: 14px;
+  --card-title-font-weight: 500;
+  --card-title-line-height: 17px;
+  --card-title-letter-spacing: 0.05px;
+  --card-title-color: #e2e2e2;
+  --card-icon-size: 32px;
+  --card-icon-color: #f3f6ff;
+  --card-text-margin: 0;
 }

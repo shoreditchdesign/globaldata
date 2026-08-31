@@ -1,0 +1,75 @@
+.root {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--card-gap);
+  width: var(--card-width);
+  min-width: var(--card-min-width);
+  min-height: var(--card-min-height);
+  padding: var(--card-padding);
+
+  overflow-wrap: break-word;
+
+  font-family: var(--card-title-font-family);
+  color: var(--card-color);
+
+  background: var(--card-background);
+  border: none;
+  border-radius: var(--card-radius);
+  box-shadow: none;
+}
+
+.top,
+.title {
+  width: var(--card-width);
+  min-width: var(--card-min-width);
+}
+
+.top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--card-top-gap);
+}
+
+.date {
+  margin: var(--card-text-margin);
+  min-width: var(--card-min-width);
+
+  font-family: var(--card-date-font-family);
+  font-size: var(--card-date-font-size);
+  font-weight: var(--card-date-font-weight);
+  line-height: var(--card-date-line-height);
+  color: var(--card-date-color);
+  text-transform: uppercase;
+}
+
+.icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--card-icon-size);
+  height: var(--card-icon-size);
+  margin-inline-start: auto;
+  color: var(--card-icon-color);
+}
+
+.icon :global(svg) {
+  width: var(--card-icon-size);
+  height: var(--card-icon-size);
+}
+
+.title {
+  margin: var(--card-text-margin);
+
+  font-family: var(--card-title-font-family);
+  font-size: var(--card-title-font-size);
+  font-weight: var(--card-title-font-weight);
+  line-height: var(--card-title-line-height);
+  letter-spacing: var(--card-title-letter-spacing);
+  color: var(--card-title-color);
+  overflow-wrap: break-word;
+}

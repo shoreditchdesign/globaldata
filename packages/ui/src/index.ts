@@ -39,3 +39,6 @@ export type {
 
 export { Table } from "./Table/Table";
 export type { TableColumnDef, TableProps } from "./Table/Table";
+
+export { Card } from "./Card/Card";
+export type { CardProps } from "./Card/Card";
