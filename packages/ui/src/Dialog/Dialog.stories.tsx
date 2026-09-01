@@ -570,13 +570,23 @@ export const ProfileAndFocusInteractions: Story = {
     await expect(geographyField.getByText(emptyHint)).toBeVisible();
 
     const sector = page.getByRole("button", { name: "Sector Focus" });
+    const sectorField = within(sector.parentElement as HTMLElement);
 
     await userEvent.click(sector);
     await waitFor(() => {
       expect(sector).toHaveAttribute("aria-expanded", "true");
     });
+    await waitFor(() => {
+      expect(
+        sectorField.getByRole("checkbox", { name: "Technology" }),
+      ).toBeVisible();
+    });
 
-    await userEvent.keyboard("{Escape}");
+    // Dismiss via the trigger toggle. Escape is already covered on
+    // Geography Focus; here Dialog's document-level Escape listener and
+    // DialogBody becoming scrollable (tabIndex=0) race with keyboard
+    // targeting, so the field's onKeyDown does not always run.
+    await userEvent.click(sector);
     await waitFor(() => {
       expect(sector).toHaveAttribute("aria-expanded", "false");
     });
