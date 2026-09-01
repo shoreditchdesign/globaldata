@@ -1,4 +1,4 @@
-import { useId, type ReactNode } from "react";
+import { useId } from "react";
 
 import type {
   NavigationBarGroup,
@@ -149,5 +149,3 @@ export const navigationBarDemoItems: NavigationBarItem[] = [
     tone: "accent",
   }),
 ];
-
-export const navigationBarDemoLogo: ReactNode = <NavigationBarDemoLogo />;

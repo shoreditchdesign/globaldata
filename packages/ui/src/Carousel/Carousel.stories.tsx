@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "storybook/test";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 
 import { Carousel } from "./Carousel";
 import { CarouselOverview } from "./CarouselOverview";
@@ -48,7 +48,9 @@ export const Overview: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    await expect(canvas.getByText(carouselCardDemoTitle)).toBeVisible();
+    await waitFor(() => {
+      expect(canvas.getByText(carouselCardDemoTitle)).toBeVisible();
+    });
     expect(canvas.getAllByRole("button", { name: /Show item/i })).toHaveLength(
       3,
     );
@@ -77,7 +79,9 @@ export const Default: Story = {
     const next = canvas.getByRole("button", { name: "Next item" });
     const previous = canvas.getByRole("button", { name: "Previous item" });
 
-    await expect(canvas.getByText(carouselCardDemoTitle)).toBeVisible();
+    await waitFor(() => {
+      expect(canvas.getByText(carouselCardDemoTitle)).toBeVisible();
+    });
     await expect(previous).toBeDisabled();
     expect(canvas.getAllByRole("button", { name: /^Item \d+$/ })).toHaveLength(
       4,
@@ -85,16 +89,20 @@ export const Default: Story = {
 
     await userEvent.click(next);
 
-    await expect(
-      canvas.getByText(carouselCardDemoCompactItems[0].title),
-    ).toBeVisible();
+    await waitFor(() => {
+      expect(
+        canvas.getByText(carouselCardDemoCompactItems[0].title),
+      ).toBeVisible();
+    });
     await expect(previous).toBeEnabled();
 
     await userEvent.click(canvas.getByRole("button", { name: "Item 4" }));
 
-    await expect(
-      canvas.getByText(carouselCardDemoCompactItems[2].title),
-    ).toBeVisible();
+    await waitFor(() => {
+      expect(
+        canvas.getByText(carouselCardDemoCompactItems[2].title),
+      ).toBeVisible();
+    });
     await expect(next).toBeDisabled();
     expectNoPageOverflow(canvasElement);
   },
@@ -117,7 +125,9 @@ export const FewItems: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    await expect(canvas.getByText(carouselCardDemoTitle)).toBeVisible();
+    await waitFor(() => {
+      expect(canvas.getByText(carouselCardDemoTitle)).toBeVisible();
+    });
     expect(canvas.getAllByRole("button", { name: /Show item/i })).toHaveLength(
       1,
     );
@@ -145,7 +155,9 @@ export const WithoutMedia: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    await expect(canvas.getByText(carouselCardDemoAction)).toBeVisible();
+    await waitFor(() => {
+      expect(canvas.getByText(carouselCardDemoAction)).toBeVisible();
+    });
     expect(canvasElement.querySelector("img")).toBeNull();
     expectNoPageOverflow(canvasElement);
   },

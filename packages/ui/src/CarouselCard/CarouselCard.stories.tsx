@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { expect, within } from "storybook/test";
+import { expect, waitFor, within } from "storybook/test";
 
 import { CarouselCard } from "./CarouselCard";
 import { CarouselCardOverview } from "./CarouselCardOverview";
@@ -7,8 +7,9 @@ import styles from "./CarouselCardOverview.module.css";
 import {
   CarouselCardDemoMedia,
   carouselCardDemoAction,
+  carouselCardDemoCompactAltEyebrow,
   carouselCardDemoCompactEyebrow,
-  carouselCardDemoCompactItems,
+  carouselCardDemoCompactLongTitle,
   carouselCardDemoCompactTitle,
   carouselCardDemoDescription,
   carouselCardDemoEyebrow,
@@ -51,17 +52,29 @@ export const Overview: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    await expect(canvas.getByText(carouselCardDemoEyebrow)).toBeVisible();
-    await expect(canvas.getByText(carouselCardDemoTitle)).toBeVisible();
+    await waitFor(() => {
+      expect(canvas.getByText(carouselCardDemoTitle)).toBeVisible();
+    });
+    expect(canvas.getAllByText(carouselCardDemoEyebrow).length).toBeGreaterThan(
+      0,
+    );
     await expect(canvas.getByText(carouselCardDemoAction)).toBeVisible();
 
-    await expect(canvas.getByText("Industry Insight")).toBeVisible();
     await expect(
-      canvas.getByText(carouselCardDemoCompactItems[1].title),
+      canvas.getByText(carouselCardDemoCompactEyebrow),
+    ).toBeVisible();
+    await expect(
+      canvas.getByText(carouselCardDemoCompactTitle),
+    ).toBeVisible();
+    await expect(
+      canvas.getByText(carouselCardDemoCompactAltEyebrow),
+    ).toBeVisible();
+    await expect(
+      canvas.getByText(carouselCardDemoCompactLongTitle),
     ).toBeVisible();
     expect(
       canvasElement.querySelectorAll('[data-variant="compact"]').length,
-    ).toBeGreaterThanOrEqual(3);
+    ).toBe(2);
 
     expectNoPageOverflow(canvasElement);
   },

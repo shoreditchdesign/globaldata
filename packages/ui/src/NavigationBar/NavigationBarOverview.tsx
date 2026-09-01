@@ -69,6 +69,7 @@ export function NavigationBarOverview() {
       >
         <div className={styles.livePreview}>
           <NavigationBar
+            ariaLabel="Mega menu"
             defaultOpenId="companies"
             items={navigationBarDemoItems}
             logo={<NavigationBarDemoLogo />}

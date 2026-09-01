@@ -69,6 +69,7 @@ export function LoginFormOverview() {
             defaultRememberMe
             forgotPasswordHref={loginFormDemoForgotHref}
             signUpHref={loginFormDemoSignUpHref}
+            title="Filled login"
           />
         </div>
       </OverviewShowcaseRow>

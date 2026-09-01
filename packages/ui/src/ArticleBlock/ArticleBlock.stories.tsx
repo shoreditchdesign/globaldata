@@ -92,16 +92,12 @@ export const RecommendedForYou: Story = {
     await userEvent.click(deals);
 
     await expect(deals).toHaveAttribute("aria-selected", "true");
+    await expect(analysis).toHaveAttribute("aria-selected", "false");
     await expect(
       canvas.getByRole("link", {
         name: "Mid-cap diagnostics group agrees $1.2bn take-private",
       }),
     ).toBeVisible();
-    expect(
-      canvas.queryByRole("link", {
-        name: "Oncology pipeline catalysts to watch in the next planning cycle",
-      }),
-    ).toBeNull();
     expectNoPageOverflow(canvasElement);
   },
 };

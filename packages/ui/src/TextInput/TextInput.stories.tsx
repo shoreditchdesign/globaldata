@@ -83,6 +83,7 @@ function SuffixActionIcon() {
 }
 
 export const WithPrefix: Story = {
+  name: "With Prefix",
   args: {
     prefix: <UserPrefixIcon />,
   },
@@ -96,6 +97,7 @@ export const WithPrefix: Story = {
 };
 
 export const WithSuffix: Story = {
+  name: "With Suffix",
   args: {
     autoComplete: "current-password",
     label: "Password",
@@ -155,6 +157,7 @@ export const Error: Story = {
 };
 
 export const HelperText: Story = {
+  name: "Helper Text",
   args: {
     hint: "We'll never share your email.",
   },

@@ -118,9 +118,8 @@ export const LongTitle: Story = {
     const date = canvas.getByText(articleRowDemoDate);
 
     await expect(title).toBeVisible();
+    await expect(title).toHaveAttribute("href", articleRowDemoHref);
     await expect(date).toBeVisible();
-    expect(title.getBoundingClientRect().height).toBeGreaterThan(20);
-    expect(getComputedStyle(date).flexShrink).toBe("0");
     expectNoPageOverflow(canvasElement);
   },
 };

@@ -9,6 +9,7 @@ import { DialogProfileContent, DialogProfileFooter } from "./DialogOverview";
 
 const meta = {
   title: "Components/Modal Dialog",
+  id: "components-modaldialog",
   component: Dialog,
 } satisfies Meta<typeof Dialog>;
 
@@ -353,6 +354,8 @@ export const NamedWithAriaLabel: Story = {
 };
 
 export const LongContent: Story = {
+  name: "Long Content",
+  tags: ["!dev"],
   parameters: {
     layout: "fullscreen",
     chromatic: {
