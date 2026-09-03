@@ -5,7 +5,7 @@ import { Button } from "./Button";
 import { ButtonOverview } from "./ButtonOverview";
 
 const meta = {
-  title: "Components/Button",
+  title: "Atoms/Button",
   component: Button,
 } satisfies Meta<typeof Button>;
 

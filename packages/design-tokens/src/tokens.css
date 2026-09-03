@@ -162,6 +162,9 @@
   --table-min-height: 0;
   --table-default-height: 420px;
   --table-empty-color: #515255;
+  --table-header-sort-gap: 6px;
+  --table-header-sort-icon-size: 10px;
+  --table-header-sort-idle-opacity: 0.45;
 
   --card-background: #060c25;
   --card-color: #e2e2e2;

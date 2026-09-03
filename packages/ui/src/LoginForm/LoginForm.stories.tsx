@@ -12,7 +12,7 @@ import {
 } from "./loginFormDemo";
 
 const meta = {
-  title: "Components/Login Form",
+  title: "Organisms/Login Form",
   id: "components-loginform",
   component: LoginForm,
   args: {

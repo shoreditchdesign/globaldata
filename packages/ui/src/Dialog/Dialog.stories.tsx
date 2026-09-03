@@ -8,7 +8,7 @@ import { DialogDocsOverview } from "./DialogDocsOverview";
 import { DialogProfileContent, DialogProfileFooter } from "./DialogOverview";
 
 const meta = {
-  title: "Components/Modal Dialog",
+  title: "Organisms/Modal Dialog",
   id: "components-modaldialog",
   component: Dialog,
 } satisfies Meta<typeof Dialog>;

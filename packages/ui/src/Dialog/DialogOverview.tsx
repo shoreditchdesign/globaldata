@@ -277,11 +277,21 @@ function FocusMultiSelect({
       }
     };
 
+    const onKeyDown = (event: globalThis.KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.stopPropagation();
+        closeWithoutCommit();
+      }
+    };
+
     document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown, true);
 
     return () => {
       document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown, true);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
   const toggleOption = (option: string) => {
@@ -302,12 +312,6 @@ function FocusMultiSelect({
   return (
     <div
       className={clsx(styles.field, open && styles.fieldOpen)}
-      onKeyDown={(event) => {
-        if (event.key === "Escape" && open) {
-          event.stopPropagation();
-          closeWithoutCommit();
-        }
-      }}
       ref={rootRef}
     >
       <button

@@ -30,6 +30,7 @@ blob-report/
 
 # Local docs (not for repo)
 docs/sprint-1/
+docs/sprint-2/
 slides/
 template/
 
@@ -38,3 +39,4 @@ template/
 scratchpad.txt
 template/index.html
 template/DESIGN-NOTES.md
+scratchpad.md

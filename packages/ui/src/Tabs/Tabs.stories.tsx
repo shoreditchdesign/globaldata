@@ -5,7 +5,7 @@ import { Tabs, TabsList, TabsTab } from "./Tabs";
 import { TabsOverview } from "./TabsOverview";
 
 const meta = {
-  title: "Components/Tabs",
+  title: "Atoms/Tabs",
   component: Tabs,
 } satisfies Meta<typeof Tabs>;
 

@@ -21,6 +21,15 @@ const preview: Preview = {
     a11y: {
       test: "error",
     },
+
+    options: {
+      // Atomic design order, not alphabetical: atoms are the primitives every
+      // molecule and organism composes from, so the sidebar reads bottom-up the
+      // same way the library is built. Anything not listed here sorts after.
+      storySort: {
+        order: ["Atoms", "Molecules", "Organisms"],
+      },
+    },
   },
 };
 

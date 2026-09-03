@@ -16,7 +16,7 @@ import {
 } from "../CarouselCard/carouselCardDemo";
 
 const meta = {
-  title: "Components/Carousel",
+  title: "Organisms/Carousel",
   component: Carousel,
 } satisfies Meta<typeof Carousel>;
 

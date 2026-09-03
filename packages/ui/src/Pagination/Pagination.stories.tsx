@@ -10,7 +10,7 @@ import {
 import { PaginationOverview } from "./PaginationOverview";
 
 const meta = {
-  title: "Components/Pagination",
+  title: "Atoms/Pagination",
   component: Pagination,
 } satisfies Meta<typeof Pagination>;
 

@@ -12,7 +12,7 @@ import {
 } from "./articleRowDemo";
 
 const meta = {
-  title: "Components/Article Row",
+  title: "Molecules/Article Row",
   id: "components-articlerow",
   component: ArticleRow,
 } satisfies Meta<typeof ArticleRow>;

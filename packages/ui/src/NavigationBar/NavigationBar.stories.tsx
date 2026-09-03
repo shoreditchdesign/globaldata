@@ -12,7 +12,7 @@ import {
 } from "./navigationBarDemo";
 
 const meta = {
-  title: "Components/Navigation Bar",
+  title: "Organisms/Navigation Bar",
   id: "components-navigationbar",
   component: NavigationBar,
   args: {

@@ -11,7 +11,7 @@ import {
 } from "./articleBlockDemo";
 
 const meta = {
-  title: "Components/Article Block",
+  title: "Organisms/Article Block",
   id: "components-articleblock",
   component: ArticleBlock,
 } satisfies Meta<typeof ArticleBlock>;

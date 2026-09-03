@@ -69,3 +69,9 @@ export type {
   NavigationBarLink,
   NavigationBarProps,
 } from "./NavigationBar/NavigationBar";
+
+export { HeaderCell } from "./HeaderCell/HeaderCell";
+export type { HeaderCellProps, HeaderCellSort } from "./HeaderCell/HeaderCell";
+
+export { TableCell } from "./TableCell/TableCell";
+export type { TableCellProps } from "./TableCell/TableCell";

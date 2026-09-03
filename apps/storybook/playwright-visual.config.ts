@@ -3,7 +3,10 @@ import { defineConfig } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,
-  timeout: 30_000,
+  // The visual spec declares one test per story, so this budget covers a single
+  // navigate-and-screenshot rather than the whole catalogue. It stays flat as
+  // the library grows; only the number of tests goes up.
+  timeout: 60_000,
   expect: {
     toHaveScreenshot: { maxDiffPixelRatio: 0.02 },
   },

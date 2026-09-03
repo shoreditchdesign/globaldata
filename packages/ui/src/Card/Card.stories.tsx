@@ -12,7 +12,7 @@ import {
 } from "./cardDemo";
 
 const meta = {
-  title: "Components/Card",
+  title: "Molecules/Card",
   component: Card,
 } satisfies Meta<typeof Card>;
 

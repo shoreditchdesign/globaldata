@@ -18,7 +18,7 @@ function DrugTable(props: TableProps<DrugRow>) {
 }
 
 const meta = {
-  title: "Components/Table",
+  title: "Molecules/Table",
   component: DrugTable,
 } satisfies Meta<typeof DrugTable>;
 

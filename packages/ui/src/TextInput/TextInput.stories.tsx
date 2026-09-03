@@ -6,7 +6,7 @@ import { HoldToShowPasswordField } from "./HoldToShowPasswordField";
 import { TextInputOverview } from "./TextInputOverview";
 
 const meta = {
-  title: "Components/Text Input",
+  title: "Atoms/Text Input",
   id: "components-textinput",
   component: TextInput,
   args: {
